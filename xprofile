@@ -1,3 +1,2 @@
 # setxkbmap gb
 xautolock -timer 60 -locker "i3lock -i $HOME/.lock.png"
-
