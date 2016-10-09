@@ -29,13 +29,13 @@ volume master {
 
 wireless _first_ {
         format_up = " %ip @ %essid"
-        format_down = "W"
+        format_down = ""
 }
 
 ethernet _first_ {
         # if you use %speed, i3status requires root privileges
-        format_up = "%ip (%speed)"
-        format_down = "E"
+        format_up = " %ip"
+        format_down = ""
 }
 
 battery 0 {
@@ -51,7 +51,7 @@ run_watch VPN {
 }
 
 tztime local {
-        format = " %d.%m.%Y %H:%M:%S"
+        format = " %a %d.%m.%Y %H:%M:%S"
 }
 
 load {
