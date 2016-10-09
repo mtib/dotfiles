@@ -1,2 +1,6 @@
 # setxkbmap gb
-xautolock -timer 60 -locker "i3lock -i $HOME/.lock.png"
+# setxkbmap -layout de -variant nodeadkeys
+# illum-d & # started via cron as root on boot
+xautolock -time 10 -locker "i3lock -i $HOME/.lock.png" &
+xset +dpms
+xset dpms 0 0 610

@@ -20,7 +20,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"mononoki 12\\" -opacity 90 -color-normal \\"#113\\",\\"#fff\\",\\"#224\\",\\"#113\\",\\"#55f\\" -color-window \\"#111\\",\\"#000\\",\\"#fff\\""
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+x exec gnome-screenshot -i
-bindsym $mod+a exec atom -n
+bindsym $mod+Shift+a exec atom -n
 bindsym $mod+l exec "i3lock -i $HOME/.lock.png"
 
 bindsym $mod+Left focus left
