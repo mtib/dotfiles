@@ -6,9 +6,9 @@ font pango:Fira Code 10
 hide_edge_borders both
 
 #class                  border  backgr. text    indicator child_border
-client.focused          #32333b #41424b #ffffff #535353   #222222
-client.focused_inactive #32333b #323337 #777777 #292d2e   #222222
-client.unfocused        #32333b #323337 #777777 #292d2e   #222222
+client.focused          #2F343F #41424b #ffffff #535353   #2F343F
+client.focused_inactive #2F343F #2F343F #777777 #292d2e   #2F343F
+client.unfocused        #2F343F #2F343F #777777 #292d2e   #2F343F
 client.urgent           #900000 #ffffff #000000 #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -17,7 +17,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec konsole
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "#41424b" -bg "#41424b" -fg "#ffffff" -hlbg "#41424b" -hlfg "#9575cd" -font "Fira Code 18"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"mononoki 12\\" -opacity 90 -color-normal \\"#113\\",\\"#fff\\",\\"#224\\",\\"#113\\",\\"#55f\\" -color-window \\"#111\\",\\"#000\\",\\"#fff\\""
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+l exec "i3lock -i $HOME/.lock.png"
 
