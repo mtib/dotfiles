@@ -6,14 +6,19 @@ import shutil
 
 def main():
     force = "--force" in sys.argv
-    if "--xprofile" in sys.argv:
-        copy("xprofile", ".xprofile", force)
-    if "--i3" in sys.argv:
-        copy("i3/i3",".config/i3/config", force)
-    if "--i3status" in sys.argv:
-        copy("i3/i3status", ".config/i3status/config", force)
-    if "--vimrc" in sys.argv:
-        copy("vimrc", ".vimrc", force)
+    def norm(fln):
+        regist("--"+fln, fln, "."+fln, force)
+    norm("xprofile")
+    norm("zprofile")
+    norm("xinitrc")
+    norm("zshrc.local")
+    norm("vimrc")
+    regist("--i3", "i3/i3", ".config/i3/config", force)
+    regist("--i3status", "i3/i3status", ".config/i3status/config", force)
+
+def regist(cmd, frm, to, frc):
+    if cmd in sys.argv:
+        copy(frm, to, frc)
 
 def copy(fr, to, force=False):
     print("Copy:",fr,"to",to)
