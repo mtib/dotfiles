@@ -12,6 +12,8 @@ def main():
         copy("i3/i3",".config/i3/config", force)
     if "--i3status" in sys.argv:
         copy("i3/i3status", ".config/i3status/config", force)
+    if "--vimrc" in sys.argv:
+        copy("vimrc", ".vimrc", force)
 
 def copy(fr, to, force=False):
     print("Copy:",fr,"to",to)
