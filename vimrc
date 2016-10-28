@@ -35,3 +35,10 @@ colorscheme desert
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 map <C-n> :NERDTreeToggle<CR>
+map <C-J> :wincmd j<CR>
+map <C-K> :wincmd k<CR>
+map <C-L> :wincmd l<CR>
+map <C-H> :wincmd h<CR>
+" hide ycm [Preview] Window
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
