@@ -3,7 +3,7 @@ filetype plugin on
 filetype indent on
 set ruler
 set wrap
-set cmdheight=2
+set cmdheight=1
 set ignorecase
 set smartcase
 set lazyredraw
