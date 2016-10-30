@@ -11,4 +11,6 @@ git clone https://github.com/airblade/vim-gitgutter
 git clone https://github.com/valloric/youcompleteme
 git clone https://github.com/vim-airline/vim-airline
 git clone git://github.com/tpope/vim-fugitive.git
+git clone git://github.com/vim-airline/vim-airline-themes
+git clone https://github.com/tyrannicaltoucan/vim-quantum
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
