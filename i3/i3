@@ -6,10 +6,10 @@ font pango:Fira Code 10
 hide_edge_borders both
 
 #class                  border  backgr. text    indicator child_border
-client.focused          #2F343F #41424b #ffffff #535353   #2F343F
-client.focused_inactive #2F343F #2F343F #777777 #292d2e   #2F343F
-client.unfocused        #2F343F #2F343F #777777 #292d2e   #2F343F
-client.urgent           #900000 #ffffff #000000 #900000   #900000
+client.focused          #0F2732 #77A8EF #263238 #0F2732   #0F2732
+client.focused_inactive #0F2732 #30404E #98A8B1 #0F2732   #0F2732
+client.unfocused        #0F2732 #30404E #98A8B1 #0F2732   #0F2732
+client.urgent           #990000 #ffffff #000000 #990000   #990000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # Move floating windows
@@ -17,7 +17,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec konsole
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"mononoki 12\\" -opacity 90 -color-normal \\"#113\\",\\"#fff\\",\\"#224\\",\\"#113\\",\\"#55f\\" -color-window \\"#111\\",\\"#000\\",\\"#fff\\""
+bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"mononoki 12\\" -opacity 90 -color-normal \\"#113\\",\\"#fff\\",\\"#224\\",\\"#113\\",\\"#a2a2fb\\" -color-window \\"#111\\",\\"#000\\",\\"#fff\\""
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+x exec gnome-screenshot -i
 bindsym $mod+Shift+a exec atom -n
@@ -47,8 +47,8 @@ bindsym $mod+space focus mode_toggle
 
 bindsym $mod+a focus parent
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/share/i3scripts/louder.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id /usr/share/i3scripts/quieter.sh
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Screen brightness controls via illum-d
@@ -121,7 +121,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
         colors {
-          background #2F343F
+          background #30404E
         }
 }
 
