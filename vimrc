@@ -52,4 +52,5 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:airline_powerline_fonts = 1
 let g:airline_theme='quantum'
 
+set guifont=Ttyp0\ 11
 
