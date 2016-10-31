@@ -2,7 +2,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-font pango:Fira Code 10
+font pango:Ttyp0 12
 hide_edge_borders both
 
 #class                  border  backgr. text    indicator child_border
@@ -100,6 +100,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 assign [class="Thunderbird"] workspace $ws8
 assign [class="discord"] workspace $ws9
+for_window [class="Eog"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -132,7 +133,8 @@ bar {
 exec_always feh --bg-fill /home/mtib/.lock.png
 
 # exec on initialization:
-exec thunderbird
-exec discord-canary
-exec --no-startup-id compton -f
+#exec thunderbird
+#exec discord-canary
+#exec --no-startup-id compton -f
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/konsole;'
 exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/firefox; workspace $ws1'
