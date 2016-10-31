@@ -17,7 +17,10 @@ floating_modifier $mod
 
 bindsym $mod+Return exec konsole
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"mononoki 12\\" -opacity 90 -color-normal \\"#113\\",\\"#fff\\",\\"#224\\",\\"#113\\",\\"#a2a2fb\\" -color-window \\"#111\\",\\"#000\\",\\"#fff\\""
+bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"Ttyp0 12\\" -opacity 90 -color-normal \\"#77A8EF\\",\\"#263238\\",\\"#77A8EF\\",\\"#263238\\",\\"#77A8EF\\" -color-window \\"#77A8EF\\",\\"#0F2732\\",\\"#263238\\""
+# main: bg txt bg
+# curr: bg txt
+# wind: inner outer dots
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+x exec gnome-screenshot -i
 bindsym $mod+Shift+a exec atom -n
