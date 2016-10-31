@@ -57,3 +57,6 @@ local zsh configuration (variables and shortcuts)
 
 #### illum-d
 changes screen brightness
+
+## todo
+- [ ] script option to `ln` instead of `cp`
