@@ -1,10 +1,12 @@
 #!/bin/bash
 
 l() {
-    ln -s $1 $2
+	ln -s $(pwd)/$1 $2
 }
 
 l vimrc $HOME/.vimrc
 l xinitrc $HOME/.xinitrc
 l xprofile $HOME/.xprofile
 l zprofile $HOME/.zprofile
+l i3/i3 $HOME/.config/i3/config
+l i3/i3status $HOME/.config/i3status/config
