@@ -35,7 +35,9 @@ set termguicolors
 colorscheme quantum
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+" NERDTree
 map <C-n> :NERDTreeToggle<CR>
+" changing buffers
 map <C-J> :wincmd j<CR>
 map <C-K> :wincmd k<CR>
 map <C-L> :wincmd l<CR>
@@ -43,6 +45,9 @@ map <C-H> :wincmd h<CR>
 " hide ycm [Preview] Window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" ctrlp
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='quantum'
