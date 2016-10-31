@@ -15,3 +15,16 @@ git clone git://github.com/vim-airline/vim-airline-themes
 git clone https://github.com/tyrannicaltoucan/vim-quantum
 git clone https://github.com/tpope/vim-surround
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
+
+aur() {
+    git clone https://aur.archlinux.org/$1.git
+    cd $1
+    makepkg -sri
+    cd ..
+}
+
+(
+    cd ..
+    aur "uw-ttyp0-font"
+    aur "bdf-creep"
+)
