@@ -15,7 +15,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # Move floating windows
 floating_modifier $mod
 
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec konsole -e zsh
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"Ttyp0 12\\" -opacity 90 -color-normal \\"#77A8EF\\",\\"#263238\\",\\"#77A8EF\\",\\"#263238\\",\\"#77A8EF\\" -color-window \\"#77A8EF\\",\\"#0F2732\\",\\"#263238\\""
 # main: bg txt bg
