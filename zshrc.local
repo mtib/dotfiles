@@ -1,6 +1,13 @@
+#!/usr/bin/zsh
+if [[ -f $HOME/.keys ]] then
+    source $HOME/.keys
+fi
+
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export TERM="xterm-256color"
+export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/gvim"
 alias diff="git diff"
 alias l="ls -lh"
 alias la="ls -alah"
