@@ -22,6 +22,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"Ttyp0 12\\" -opacit
 # curr: bg txt
 # wind: inner outer dots
 bindsym $mod+Shift+f exec firefox
+bindsym $mod+t exec thunar
 bindsym $mod+x exec gnome-screenshot -i
 #bindsym $mod+Shift+a exec atom -n
 bindsym $mod+l exec "i3lock -i $HOME/.lock.png"
@@ -137,5 +138,5 @@ exec_always feh --bg-fill /home/mtib/.lock.png
 #exec thunderbird
 #exec discord-canary
 exec --no-startup-id compton -D 3
-exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/konsole;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/konsole; exec thunar;'
 exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/firefox; workspace $ws1'
