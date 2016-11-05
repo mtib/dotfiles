@@ -15,4 +15,11 @@ alias la="ls -alah"
 function gitaur {
 	git clone https://aur.archlinux.org/$1
 }
+function aurinstall {
+    gitaur $1
+    cd $1
+    makepkg -sri
+    cd ..
+    rm -rf $1
+}
 

@@ -25,7 +25,7 @@ set $test #ff00ff
 
 font pango:Ttyp0 12
 hide_edge_borders both
-new_window normal 0
+new_window normal 1
 new_float normal
 
 #class                  border  backgr. text    indicator child_border
