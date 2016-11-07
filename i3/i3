@@ -40,7 +40,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec konsole -e zsh
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"Ttyp0 12\\" -opacity 90 -color-normal \\"$c1\\",\\"#263238\\",\\"$c1\\",\\"#263238\\",\\"$c1\\" -color-window \\"$c1\\",\\"$cb\\",\\"#263238\\""
+bindsym $mod+d exec --no-startup-id "rofi -show run -font \\"Ttyp0 12\\" -terminal konsole -fuzzy -opacity 90 -color-normal \\"$c1\\",\\"#263238\\",\\"$c1\\",\\"#263238\\",\\"$c1\\" -color-window \\"$c1\\",\\"$cb\\",\\"#263238\\""
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
