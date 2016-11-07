@@ -9,6 +9,8 @@
 general {
         colors = true
         interval = 10
+        color_good = "#FFFFFF"
+        color_bad = "#000000"
 }
 
 order += "disk /"
