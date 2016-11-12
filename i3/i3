@@ -54,6 +54,8 @@ bindsym $mod+Shift+v exec konsole -e vim
 
 bindcode $mod+Shift+59 move workspace to output left
 bindcode $mod+Shift+60 move workspace to output right
+bindcode $mod+59 move workspace to output down
+bindcode $mod+60 move workspace to output up
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
