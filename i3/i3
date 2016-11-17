@@ -132,6 +132,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 assign [class="Thunderbird"] workspace $ws8
 assign [class="discord"] workspace $ws9
 for_window [class="Eog"] floating enable
+for_window [class="gnome-screenshot"] sticky enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -155,6 +156,8 @@ bindsym $mod+r mode "resize"
 
 bar {
         status_command i3status
+        mode hide
+        position top
         colors {
             background $tb
             statusline $c1
