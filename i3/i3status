@@ -22,8 +22,8 @@ order += "load"
 order += "tztime local"
 
 volume master {
-        format = " %volume"
-        format_muted = " (m)"
+        format = "%volume"
+        format_muted = "(m)"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
