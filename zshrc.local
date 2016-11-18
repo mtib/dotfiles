@@ -11,6 +11,7 @@ export VISUAL="/usr/bin/gvim"
 alias diff="git diff"
 alias l="ls -lh"
 alias la="ls -alah"
+alias vis="vis -c ~/.visrc"
 
 function gitaur {
 	git clone https://aur.archlinux.org/$1

@@ -4,11 +4,11 @@
 set $mod Mod4
 
 #highlights
-set $c1 #1ABC9C
+set $c1 #81A2C5
 #dark highlights
 set $cb #263238
 #unfocus-titlebar
-set $tb #073642
+set $tb #26394C
 
 #OLD THEMES
 #1: #4DADD4 #0F2732 #30404E
@@ -45,7 +45,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Ttyp0 12' -terminal k
 # curr: bg txt
 # wind: inner outer dots
 bindsym $mod+m exec konsole -e vifm
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+f fullscreen global
 bindsym $mod+t exec thunar
 bindsym $mod+x exec gnome-screenshot -i
 #bindsym $mod+Shift+a exec atom -n
