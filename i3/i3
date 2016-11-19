@@ -4,11 +4,11 @@
 set $mod Mod4
 
 #highlights
-set $c1 #81A2C5
+set $c1 #FFFFFF
 #dark highlights
-set $cb #263238
+set $cb #FFFFFF
 #unfocus-titlebar
-set $tb #26394C
+set $tb #000000
 
 #OLD THEMES
 #1: #4DADD4 #0F2732 #30404E
@@ -29,9 +29,9 @@ new_window normal 1
 new_float normal
 
 #class                  border  backgr. text    indicator child_border
-client.focused          $c1     $c1     $cb     $cb       $c1
-client.focused_inactive $c1     $tb     $c1     $cb       $c1
-client.unfocused        $c1     $tb     $c1     $cb       $c1
+client.focused          $c1     $c1     $tb     $cb       $c1
+client.focused_inactive $tb     $tb     $c1     $cb       $tb
+client.unfocused        $tb     $tb     $c1     $cb       $tb
 client.urgent           #990000 #ffffff #000000 #990000   #990000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -162,11 +162,10 @@ bar {
             background $tb
             statusline $c1
             separator $tb
-
                                #border backgrd font
-            focused_workspace  $cb     $cwb    $cwf
-            active_workspace   $cb     $c1     #000000
-            inactive_workspace $cb     $cb     $c1
+            focused_workspace  $cb     #111111    #FFFFFF
+            active_workspace   $cb     #FFFFFF    #000000
+            inactive_workspace $cb     #888888    #000000
             urgent_workspace   #cb     $cwf    $cwb
             binding_mode       #cb     #900000 #ffffff
         }

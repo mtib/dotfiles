@@ -32,7 +32,7 @@ set si
 set number
 set laststatus=2
 set termguicolors
-colorscheme quantum
+colorscheme delek
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " NERDTree
@@ -59,7 +59,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='quantum'
+let g:airline_theme='xtermlight'
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
 let g:ycm_confirm_extra_conf = 0
