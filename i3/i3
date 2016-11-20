@@ -163,9 +163,10 @@ bar {
             statusline $c1
             separator $tb
                                #border backgrd font
-            focused_workspace  $cb     #111111    #FFFFFF
-            active_workspace   $cb     #FFFFFF    #000000
-            inactive_workspace $cb     #888888    #000000
+            focused_workspace  $cb     #FFFFFF    #000000
+            active_workspace   $cb     #888888    #000000
+            inactive_workspace $cb     #111111    #FFFFFF
+
             urgent_workspace   #cb     $cwf    $cwb
             binding_mode       #cb     #900000 #ffffff
         }
