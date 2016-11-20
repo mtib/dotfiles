@@ -3,4 +3,4 @@
 # illum-d & # started via cron as root on boot
 xautolock -time 60 -locker "i3lock -i $HOME/.lock.png" &
 xset +dpms
-xset dpms 0 0 610
+xset dpms 0 0 1800
