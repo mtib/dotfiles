@@ -16,6 +16,9 @@ git clone https://github.com/tyrannicaltoucan/vim-quantum
 git clone https://github.com/tpope/vim-surround
 git clone git://github.com/FredKSchott/CoVim.git
 git clone https://github.com/klen/python-mode.git
+git clone git://github.com/tpope/vim-repeat.git
+git clone git://github.com/tpope/vim-commentary.git
+git clone https://github.com/chriskempson/base16-vim.git
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 
 aur() {

@@ -5,13 +5,18 @@ fi
 
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin"
-export TERM="xterm-256color"
 export EDITOR="/usr/bin/vim"
+export TERM="xterm-256color"
 export VISUAL="/usr/bin/gvim"
 alias diff="git diff"
 alias l="ls -lh"
 alias la="ls -alah"
 alias vis="vis -c ~/.visrc"
+
+export VIMBG="default" # should be changed
+base16dir="$HOME/github/base16-shell/scripts/"
+base16light="base16-google-light"
+base16dark="base16-google-dark"
 
 function gitaur {
 	git clone https://aur.archlinux.org/$1
@@ -23,4 +28,18 @@ function aurinstall {
     cd ..
     rm -rf $1
 }
+function dark {
+    VIMBG=$base16dark
+    source "${base16dir}${base16dark}.sh"
+}
+function light {
+    VIMBG=$base16light
+    source "${base16dir}${base16light}.sh"
+}
 
+curh=$(date +"%H")
+if [[ $curh -lt 18 ]] && [[ $curh -gt 10 ]]; then
+    light
+else
+    dark
+fi

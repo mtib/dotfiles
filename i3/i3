@@ -38,13 +38,13 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # Move floating windows
 floating_modifier $mod
 
-bindsym $mod+Return exec konsole -e zsh
+bindsym $mod+Return exec xfce4-terminal -e zsh
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Ttyp0 12' -terminal konsole -fuzzy -opacity 90 -color-window '#1abc9c, #263238, #1abc9c' -color-normal '#1abc9c, #073642, #1abc9c, #073642, #1abc9c' -color-active '#23dcb7, #080092, #23dcb7, #ffffff, #000000' -color-urgent '#db5f73, #371e21, #db5f73, #ffffff, #d51635'"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Ttyp0 12' -terminal xfce4-terminal -fuzzy -opacity 90 -color-window '#1abc9c, #263238, #1abc9c' -color-normal '#1abc9c, #073642, #1abc9c, #073642, #1abc9c' -color-active '#23dcb7, #080092, #23dcb7, #ffffff, #000000' -color-urgent '#db5f73, #371e21, #db5f73, #ffffff, #d51635'"
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
-bindsym $mod+m exec konsole -e vifm
+bindsym $mod+m exec xfce4-terminal -e vifm
 bindsym $mod+Shift+f fullscreen global
 bindsym $mod+t exec thunar
 bindsym $mod+x exec gnome-screenshot -i
@@ -179,5 +179,5 @@ exec_always feh --bg-tile /home/mtib/.lock.png
 #exec thunderbird
 #exec discord-canary
 #exec --no-startup-id compton -D 3
-exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/konsole -e zsh; exec /usr/bin/konsole -e vifm;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/xfce4-terminal -e zsh; exec /usr/bin/xfce4-terminal -e vifm;'
 exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/firefox; workspace $ws1'
