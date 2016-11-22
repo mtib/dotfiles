@@ -45,7 +45,7 @@ map <C-J> :wincmd j<CR>
 map <C-K> :wincmd k<CR>
 map <C-L> :wincmd l<CR>
 map <C-H> :wincmd h<CR>
-nnoremap q <NOP>
+"nnoremap q <NOP>
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1

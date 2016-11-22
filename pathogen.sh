@@ -12,24 +12,13 @@ git clone https://github.com/valloric/youcompleteme
 git clone https://github.com/vim-airline/vim-airline
 git clone git://github.com/tpope/vim-fugitive.git
 git clone git://github.com/vim-airline/vim-airline-themes
-git clone https://github.com/tyrannicaltoucan/vim-quantum
+# git clone https://github.com/tyrannicaltoucan/vim-quantum
 git clone https://github.com/tpope/vim-surround
-git clone git://github.com/FredKSchott/CoVim.git
+# git clone git://github.com/FredKSchott/CoVim.git
 git clone https://github.com/klen/python-mode.git
 git clone git://github.com/tpope/vim-repeat.git
 git clone git://github.com/tpope/vim-commentary.git
 git clone https://github.com/chriskempson/base16-vim.git
+git clone https://github.com/mattn/emmet-vim.git
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 
-aur() {
-    git clone https://aur.archlinux.org/$1.git
-    cd $1
-    makepkg -sri
-    cd ..
-}
-
-(
-    cd ..
-    aur "uw-ttyp0-font"
-    aur "bdf-creep"
-)
