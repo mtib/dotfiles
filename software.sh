@@ -30,4 +30,5 @@ p baobab
 p thunar
 p gvim
 p texmaker
+p gource
 p texlive-core

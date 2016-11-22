@@ -14,6 +14,7 @@ l i3/i3status $HOME/.config/i3status/config
 l zshrc.local $HOME/.zshrc.local
 mkdir -p $HOME/.vifm
 l vifmrc $HOME/.vifm/vifmrc
+l tmux.conf $HOME/.tmux.conf
 # link nvim config to vim
 ln -s $HOME/.vim $HOME/.config/nvim
 ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
