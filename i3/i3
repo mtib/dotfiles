@@ -114,7 +114,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
+bindsym $mod+9 exec i3-msg workspace $ws9; exec i3-msg ' exec /usr/bin/bash -c "ps aux > /tmp/.open && grep -e \"/[^.]../discord" /tmp/.open || i3-msg exec discord-canary"'
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
