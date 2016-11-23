@@ -1,6 +1,3 @@
-# i3 config file (v4)
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod4
 
 #highlights
@@ -47,6 +44,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Ttyp0 12' -terminal x
 bindsym $mod+m exec xfce4-terminal -e vifm
 bindsym $mod+Shift+f fullscreen global
 bindsym $mod+t exec thunar
+bindsym $mod+p exec pavucontrol
 bindsym $mod+x exec gnome-screenshot -i
 #bindsym $mod+Shift+a exec atom -n
 #bindsym $mod+l exec "i3lock-fancy -i $HOME/.lock.png"
