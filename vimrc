@@ -90,3 +90,7 @@ let g:ycm_confirm_extra_conf = 0
 
 set guifont=mononoki\ 12
 
+" experimental iabbrevs
+iabbrev taht that
+iabbrev widht width
+iabbrev heigth height
