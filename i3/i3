@@ -49,7 +49,7 @@ bindsym $mod+Shift+f fullscreen global
 bindsym $mod+t exec thunar
 bindsym $mod+x exec gnome-screenshot -i
 #bindsym $mod+Shift+a exec atom -n
-#bindsym $mod+l exec "i3lock -i $HOME/.lock.png"
+#bindsym $mod+l exec "i3lock-fancy -i $HOME/.lock.png"
 bindsym $mod+Shift+v exec konsole -e vim
 
 bindcode $mod+Shift+59 move workspace to output left
@@ -114,7 +114,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
-bindsym $mod+9 exec i3-msg workspace $ws9; exec i3-msg ' exec /usr/bin/bash -c "ps aux > /tmp/.open && grep -e \"/[^.]../discord" /tmp/.open || i3-msg exec discord-canary"'
+bindsym $mod+9 exec i3-msg workspace $ws9; exec i3-msg ' exec /usr/bin/bash -c "ps aux > /tmp/.open && grep -e \"[D]iscord\" /tmp/.open && echo \"false\" > /tmp/.open || i3-msg exec discord-canary && echo \"true\" > /tmp/.open"'
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
@@ -179,5 +179,5 @@ exec_always feh --bg-tile /home/mtib/.lock.png
 #exec thunderbird
 #exec discord-canary
 #exec --no-startup-id compton -D 3
-exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/xfce4-terminal -e zsh; exec /usr/bin/xfce4-terminal -e vifm;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/xfce4-terminal -e zsh; exec /usr/bin/xfce4-terminal -e $HOME/bin/vifm.sh;'
 exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/firefox; workspace $ws1'
