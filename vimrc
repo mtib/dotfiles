@@ -39,12 +39,12 @@ colorscheme $VIMBG
 
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " NERDTree
-map <C-n> :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
 " changing buffers
-map <C-J> :wincmd j<CR>
-map <C-K> :wincmd k<CR>
-map <C-L> :wincmd l<CR>
-map <C-H> :wincmd h<CR>
+noremap <C-J> :wincmd j<CR>
+noremap <C-K> :wincmd k<CR>
+noremap <C-L> :wincmd l<CR>
+noremap <C-H> :wincmd h<CR>
 "nnoremap q <NOP>
 
 " Syntastic
@@ -88,5 +88,5 @@ let g:airline_theme='base16'
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
 let g:ycm_confirm_extra_conf = 0
 
-set guifont=Fira\ Code\ 11
+set guifont=mononoki\ 12
 
