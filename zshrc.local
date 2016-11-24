@@ -12,6 +12,7 @@ alias diff="git diff"
 alias l="ls -lh"
 alias la="ls -alah"
 alias vis="vis -c ~/.visrc"
+alias vim="nvim"
 
 export VIMBG="default" # should be changed
 base16dir="$HOME/github/base16-shell/scripts/"

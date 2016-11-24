@@ -1,4 +1,31 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'chriskempson/base16-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'xuyuanp/nerdtree-git-plugin'
+
+Plugin 'scrooloose/syntastic'
+Plugin 'valloric/youcompleteme'
+Plugin 'artur-shaik/vim-javacomplete2'
+Plugin 'mattn/emmet-vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'klen/python-mode'
+
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat.git'
+Plugin 'tpope/vim-surround'
+call vundle#end()
+
 filetype plugin on
 filetype indent on
 set ruler

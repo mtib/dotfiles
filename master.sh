@@ -73,7 +73,6 @@ ai arc-faenza-icon-theme
 ai ttf-mononoki-git
 ai otf-fira-code
 ai atom-editor-bin
-ai i3-git 
 ai i3-vim-syntax-git
 ai i3lock-fancy-git
 echo "done"
