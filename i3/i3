@@ -37,7 +37,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec xfce4-terminal -e zsh
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Ttyp0 12' -terminal xfce4-terminal -fuzzy -opacity 90 -color-window '#1abc9c, #263238, #1abc9c' -color-normal '#1abc9c, #073642, #1abc9c, #073642, #1abc9c' -color-active '#23dcb7, #080092, #23dcb7, #ffffff, #000000' -color-urgent '#db5f73, #371e21, #db5f73, #ffffff, #d51635'"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Ttyp0 12' -terminal xfce4-terminal -fuzzy -opacity 90 -color-window '#ffffff, #000000, #b7b7b7' -color-normal '#ffffff, #000000, #e5e5e5, #bbdce6, #000000' -color-active '#268bd2, #ffffff, #a77d80, #26d246, #ffffff' -color-urgent '#fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3'"
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
@@ -47,7 +47,7 @@ bindsym $mod+t exec thunar
 bindsym $mod+p exec pavucontrol
 bindsym $mod+x exec gnome-screenshot -i
 #bindsym $mod+Shift+a exec atom -n
-#bindsym $mod+l exec "i3lock-fancy -i $HOME/.lock.png"
+bindsym $mod+l exec "i3lock-fancy"
 bindsym $mod+Shift+v exec konsole -e vim
 
 bindcode $mod+Shift+59 move workspace to output left
