@@ -24,6 +24,9 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat.git'
 Plugin 'tpope/vim-surround'
+
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 call vundle#end()
 
 filetype plugin on

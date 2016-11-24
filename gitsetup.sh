@@ -2,4 +2,5 @@
 git config --global user.name "Markus Becker"
 git config --global user.email "markus@tibyte.net"
 git config --global core.editor "vim"
+git config --global github.user "mtib"
 
