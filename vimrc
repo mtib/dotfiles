@@ -1,4 +1,3 @@
-set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -19,6 +18,7 @@ Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'mattn/emmet-vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'klen/python-mode'
+Plugin 'fatih/vim-go'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
@@ -89,9 +89,13 @@ let g:syntastic_java_checkstyle_classpath="~/bin/checkstyle-java/checkstyle-7.2-
 let g:syntastic_java_checkstyle_conf_file="~/bin/checkstyle-java/checkstyle-7.2.xml"
 autocmd FileType java call SetJavaKeymap()
 function SetJavaKeymap()
-    nnoremap <F1> :!jcheck % \| less<CR>
-    nnoremap <F2> :!javac % && java %:r<CR>
+    nnoremap <F1> !jcheck % \| less<CR>
+    nnoremap <F2> :te javac % && java %:r<CR>
 endfunction
+
+" make vim-go and syntastic like each other
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " moving lines
 nnoremap <down> :m .+1<CR>==
