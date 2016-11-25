@@ -107,6 +107,7 @@ vnoremap <up> :m '<-2<CR>gv=gv
 
 " easy save
 nnoremap ,, :w<CR>
+nnoremap // :nohlsearch<CR>
 
 " hide ycm [Preview] Window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
