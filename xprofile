@@ -4,3 +4,7 @@ setxkbmap gb
 xautolock -time 60 -locker "i3lock-fancy" &
 xset +dpms
 xset dpms 0 0 1800
+if [[ $HOST -eq "tipc" ]]; then
+    compton -b
+fi
+

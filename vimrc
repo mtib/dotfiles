@@ -89,7 +89,7 @@ let g:syntastic_java_checkstyle_classpath="~/bin/checkstyle-java/checkstyle-7.2-
 let g:syntastic_java_checkstyle_conf_file="~/bin/checkstyle-java/checkstyle-7.2.xml"
 autocmd FileType java call SetJavaKeymap()
 function SetJavaKeymap()
-    nnoremap <F1> !jcheck % \| less<CR>
+    nnoremap <F1> :te jcheck % \| less<CR>
     nnoremap <F2> :te javac % && java %:r<CR>
 endfunction
 

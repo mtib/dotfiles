@@ -19,6 +19,7 @@ set $cwb #FFFFFF
 #testing
 set $test #ff00ff
 
+set $tbgd #1D1F21
 
 font pango:Fira Code 11
 hide_edge_borders both
@@ -26,9 +27,9 @@ new_window normal 1
 new_float normal
 
 #class                  border  backgr. text    indicator child_border
-client.focused          $c1     $c1     $tb     $cb       $c1
-client.focused_inactive $tb     $tb     $c1     $cb       $tb
-client.unfocused        $tb     $tb     $c1     $cb       $tb
+client.focused          $tbgd   $c1     $tb     $cb       $c1
+client.focused_inactive $tbgd   $tb     $c1     $cb       $tb
+client.unfocused        $tbgd   $tb     $c1     $cb       $tb
 client.urgent           #990000 #ffffff #000000 #990000   #990000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -42,6 +43,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Ttyp0 12' -terminal x
 # curr: bg txt
 # wind: inner outer dots
 bindsym $mod+m exec xfce4-terminal -e "$HOME/bin/ranger.sh"
+bindsym $mod+u exec xfce4-terminal -e tmux --hide-borders
 bindsym $mod+Shift+f fullscreen global
 bindsym $mod+t exec thunar
 bindsym $mod+p exec pavucontrol
@@ -131,6 +133,11 @@ assign [class="Thunderbird"] workspace $ws8
 assign [class="discord"] workspace $ws9
 for_window [class="Eog"] floating enable
 for_window [class="gnome-screenshot"] sticky enable
+
+# I3 GAPS:
+for_window [class="^.*"] border pixel 2
+gaps inner 15
+gaps outer 15
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
