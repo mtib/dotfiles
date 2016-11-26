@@ -15,6 +15,8 @@ l zshrc.local $HOME/.zshrc.local
 mkdir -p $HOME/.vifm
 l vifmrc $HOME/.vifm/vifmrc
 l tmux.conf $HOME/.tmux.conf
+mkdir -p $HOME/.config/ranger
+l rangerrc $HOME/.config/ranger/rc.conf
 # link nvim config to vim
 ln -s $HOME/.vim $HOME/.config/nvim
 ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
