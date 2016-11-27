@@ -1,7 +1,7 @@
 setxkbmap gb
 # setxkbmap -layout de -variant nodeadkeys
 # illum-d & # started via cron as root on boot
-xautolock -time 60 -locker "i3lock-fancy" &
+xautolock -time 60 -locker "i3lock-fancy -p -t ''" &
 xset +dpms
 xset dpms 0 0 1800
 if [[ $HOST -eq "tipc" ]]; then

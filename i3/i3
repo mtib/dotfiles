@@ -49,7 +49,7 @@ bindsym $mod+t exec thunar
 bindsym $mod+p exec pavucontrol
 bindsym $mod+x exec gnome-screenshot -i
 #bindsym $mod+Shift+a exec atom -n
-bindsym $mod+l exec "i3lock-fancy"
+bindsym $mod+l exec "i3lock-fancy -p -t ''"
 bindsym $mod+Shift+v exec konsole -e vim
 
 bindcode $mod+Shift+59 move workspace to output left
