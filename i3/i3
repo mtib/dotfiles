@@ -45,6 +45,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Ttyp0 12' -terminal x
 bindsym $mod+m exec xfce4-terminal -e "$HOME/bin/ranger.sh"
 bindsym $mod+u exec xfce4-terminal -e tmux --hide-borders
 bindsym $mod+Shift+f fullscreen global
+bindsym $mod+g exec gcolor2
 bindsym $mod+t exec thunar
 bindsym $mod+p exec pavucontrol
 bindsym $mod+x exec gnome-screenshot -i
