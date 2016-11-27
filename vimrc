@@ -71,13 +71,14 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " NERDTree
 noremap <C-n> :NERDTreeToggle<CR>
 " changing buffers
-noremap <C-J> :wincmd j<CR>
-noremap <C-K> :wincmd k<CR>
-noremap <C-L> :wincmd l<CR>
-noremap <C-H> :wincmd h<CR>
-"nnoremap q <NOP>
+" nnoremap <C-j> :wincmd j<CR>
+" nnoremap <C-k> :wincmd k<CR>
+" nnoremap <C-h> :wincmd h<CR>
+" nnoremap <C-l> :wincmd l<CR>
+nnoremap t /\s\{1,}$<CR>
+" noremap q <NOP>
 
-" Syntastic
+Syntastic
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1

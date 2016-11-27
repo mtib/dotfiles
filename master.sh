@@ -75,6 +75,7 @@ ai otf-fira-code
 ai atom-editor-bin
 ai i3-vim-syntax-git
 ai i3lock-fancy-git
+ai py3status
 echo "done"
 
 # move binaries folder
