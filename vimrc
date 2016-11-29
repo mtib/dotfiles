@@ -78,7 +78,7 @@ noremap <C-n> :NERDTreeToggle<CR>
 nnoremap t /\s\{1,}$<CR>
 " noremap q <NOP>
 
-Syntastic
+" Syntastic
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
