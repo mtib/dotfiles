@@ -43,4 +43,9 @@ if [[ $curh -lt 18 ]] && [[ $curh -gt 10 ]]; then
     light
 else
     dark
+    powerlvl="/usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme"
+    if [[ -f $powerlvl ]] then
+        source $powerlvl
+    fi
 fi
+

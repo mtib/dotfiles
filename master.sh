@@ -76,6 +76,7 @@ ai atom-editor-bin
 ai i3-vim-syntax-git
 ai i3lock-fancy-git
 ai py3status
+ai zsh-theme-powerlevel9k
 echo "done"
 
 # move binaries folder
