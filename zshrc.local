@@ -13,6 +13,8 @@ alias l="ls -lh"
 alias la="ls -alah"
 alias vis="vis -c ~/.visrc"
 alias vim="nvim"
+alias vmi="vim"
+alias gut="git"
 
 export VIMBG="default" # should be changed
 base16dir="$HOME/github/base16-shell/scripts/"
@@ -46,6 +48,10 @@ function light {
     source "${base16dir}${base16light}.sh"
 }
 function pwrln {
+    POWERLEVEL9K_HOME_ICON=''
+    POWERLEVEL9K_HOME_SUB_ICON=''
+    POWERLEVEL9K_FOLDER_ICON=''
+    POWERLEVEL9K_MODE='awesome-fontconfig'
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
     POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
     powerlvl="/usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme"
