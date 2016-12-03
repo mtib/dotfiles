@@ -37,15 +37,18 @@ function light {
     VIMBG=$base16light
     source "${base16dir}${base16light}.sh"
 }
+function pwrln {
+    powerlvl="/usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme"
+    if [[ -f $powerlvl ]] then
+        source $powerlvl
+    fi
+}
 
 curh=$(date +"%H")
 if [[ $curh -lt 18 ]] && [[ $curh -gt 10 ]]; then
     light
 else
     dark
-    powerlvl="/usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme"
-    if [[ -f $powerlvl ]] then
-        source $powerlvl
-    fi
 fi
-
+pwrln
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
