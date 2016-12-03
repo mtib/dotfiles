@@ -29,6 +29,14 @@ function aurinstall {
     cd ..
     rm -rf $1
 }
+function note {
+    case $@ in
+        "-e") vim ~/.note;;
+          "") cat ~/.note|less;;
+           *) echo -e "$@\n" >> ~/.note
+              echo -e "\033[0;37m\"$@\" \033[1;30madded to your notes.\033[0m\n";;
+    esac
+}
 function dark {
     VIMBG=$base16dark
     source "${base16dir}${base16dark}.sh"
