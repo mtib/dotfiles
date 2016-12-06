@@ -4,7 +4,7 @@ if [[ -f $HOME/.keys ]] then
 fi
 
 export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.local/bin"
 export EDITOR="/usr/bin/vim"
 export TERM="xterm-256color"
 export VISUAL="/usr/bin/gvim"
@@ -22,7 +22,7 @@ base16light="base16-google-light"
 base16dark="base16-google-dark"
 
 function gitaur {
-	git clone https://aur.archlinux.org/$1
+    git clone https://aur.archlinux.org/$1
 }
 function aurinstall {
     gitaur $1
@@ -34,9 +34,9 @@ function aurinstall {
 function note {
     case $@ in
         "-e") vim ~/.note;;
-          "") cat ~/.note|less;;
-           *) echo -e "$@\n" >> ~/.note
-              echo -e "\033[0;37m\"$@\" \033[1;30madded to your notes.\033[0m\n";;
+        "") cat ~/.note|less;;
+        *) echo -e "$@\n" >> ~/.note
+            echo -e "\033[0;37m\"$@\" \033[1;30madded to your notes.\033[0m\n";;
     esac
 }
 function dark {
@@ -44,7 +44,8 @@ function dark {
     source "${base16dir}${base16dark}.sh"
 }
 function light {
-    VIMBG=$base16light
+    # VIMBG=$base16light
+    VIMBG="bclear"
     source "${base16dir}${base16light}.sh"
 }
 function pwrln {

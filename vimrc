@@ -5,12 +5,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'chriskempson/base16-vim'
+Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'kien/ctrlp.vim'
 
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
@@ -19,6 +21,10 @@ Plugin 'mattn/emmet-vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'klen/python-mode'
 Plugin 'fatih/vim-go'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'alx741/ghc.vim'
 
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
@@ -40,7 +46,6 @@ set lazyredraw
 set ttyfast
 set magic
 set showmatch
-set foldcolumn=0
 set autoread
 set showcmd
 
@@ -61,12 +66,35 @@ set lbr
 set ai
 set si
 
-set number
 set relativenumber
 set laststatus=2
 set termguicolors
 colorscheme $VIMBG
 
+" HASKELL
+augroup ft_haskell
+    autocmd!
+    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+    autocmd FileType haskell compiler ghc
+    let g:ycm_semantic_triggers = {'haskell' : ['.']}
+    autocmd FileType haskell call SetHaskellKeymap()
+augroup END
+
+function SetHaskellKeymap()
+    inoreab <buffer> int Int
+    inoreab <buffer> integer Integer
+    inoreab <buffer> string String
+    inoreab <buffer> double Double
+    inoreab <buffer> float Float
+    inoreab <buffer> true True
+    inoreab <buffer> false False
+    inoreab <buffer> maybe Maybe
+    inoreab <buffer> just Just
+    inoreab <buffer> nothing Nothing
+    inoreab <buffer> io IO ()
+endfunction
+
+" JAVA
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 " NERDTree
 noremap <C-n> :NERDTreeToggle<CR>
@@ -119,7 +147,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16'
+let g:airline_theme='zenburn'
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
 let g:ycm_confirm_extra_conf = 0
