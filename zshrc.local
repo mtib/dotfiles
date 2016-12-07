@@ -15,6 +15,7 @@ alias vis="vis -c ~/.visrc"
 alias vim="nvim"
 alias vmi="vim"
 alias gut="git"
+alias svim="vim -u ~/.svimrc"
 
 export VIMBG="default" # should be changed
 base16dir="$HOME/github/base16-shell/scripts/"

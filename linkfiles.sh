@@ -5,6 +5,7 @@ l() {
 }
 
 l vimrc $HOME/.vimrc
+l svimrc $HOME/.svimrc
 l xinitrc $HOME/.xinitrc
 l xprofile $HOME/.xprofile
 l zprofile $HOME/.zprofile
