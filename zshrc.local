@@ -15,6 +15,7 @@ alias vis="vis -c ~/.visrc"
 alias vim="nvim"
 alias vmi="vim"
 alias gut="git"
+alias :q="exit"
 
 export VIMBG="default" # should be changed
 base16dir="$HOME/github/base16-shell/scripts/"
@@ -44,8 +45,8 @@ function dark {
     source "${base16dir}${base16dark}.sh"
 }
 function light {
-    # VIMBG=$base16light
-    VIMBG="bclear"
+    VIMBG=$base16light
+    # VIMBG="bclear"
     source "${base16dir}${base16light}.sh"
 }
 function pwrln {
