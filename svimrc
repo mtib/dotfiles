@@ -5,13 +5,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'chriskempson/base16-vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'airblade/vim-gitgutter'
 
 Plugin 'scrooloose/nerdtree'
-Plugin 'xuyuanp/nerdtree-git-plugin'
+" Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'scrooloose/syntastic'
@@ -21,14 +21,13 @@ Plugin 'mattn/emmet-vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'klen/python-mode'
 Plugin 'fatih/vim-go'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'alx741/ghc.vim'
+" Plugin 'Shougo/vimproc.vim'
+" Plugin 'eagletmt/neco-ghc'
+" Plugin 'eagletmt/ghcmod-vim'
+" Plugin 'alx741/ghc.vim'
 
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat.git'
 Plugin 'tpope/vim-surround'
 
@@ -38,14 +37,14 @@ call vundle#end()
 
 filetype plugin on
 filetype indent on
-set ruler
-set wrap
-set cmdheight=1
-set ignorecase
+" set ruler
+" set wrap
+" set cmdheight=1
+" set ignorecase
 set smartcase
 set lazyredraw
 set ttyfast
-set magic
+" set magic
 set showmatch
 set autoread
 set showcmd
@@ -63,17 +62,14 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-set lbr
+" set lbr
 set ai
 set si
 
 set relativenumber
 set laststatus=2
 set termguicolors
-colorscheme $VIMBG
-
-set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
-" let g:ctrlp_user_command = 'find %s -type f'
+colorscheme base16-bright
 
 " HASKELL
 augroup ft_haskell
@@ -100,15 +96,10 @@ endfunction
 
 " JAVA
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
 " NERDTree
 noremap <C-n> :NERDTreeToggle<CR>
-" changing buffers
-" nnoremap <C-j> :wincmd j<CR>
-" nnoremap <C-k> :wincmd k<CR>
-" nnoremap <C-h> :wincmd h<CR>
-" nnoremap <C-l> :wincmd l<CR>
 nnoremap t /\s\{1,}$<CR>
-" noremap q <NOP>
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
@@ -155,8 +146,6 @@ let g:airline_theme='zenburn'
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
 let g:ycm_confirm_extra_conf = 0
-
-set guifont=mononoki\ 12
 
 " experimental iabbrevs
 iabbrev taht that

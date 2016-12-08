@@ -15,6 +15,7 @@ alias vis="vis -c ~/.visrc"
 alias vim="nvim"
 alias vmi="vim"
 alias gut="git"
+alias svim="vim -u ~/.svimrc"
 alias :q="exit"
 
 export VIMBG="default" # should be changed
