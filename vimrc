@@ -24,6 +24,7 @@ Plugin 'fatih/vim-go'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'eagletmt/ghcmod-vim'
+Plugin 'rust-lang/rust.vim'
 Plugin 'alx741/ghc.vim'
 
 Plugin 'tpope/vim-commentary'
@@ -70,6 +71,9 @@ set relativenumber
 set laststatus=2
 set termguicolors
 colorscheme $VIMBG
+
+set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
+" let g:ctrlp_user_command = 'find %s -type f'
 
 " HASKELL
 augroup ft_haskell

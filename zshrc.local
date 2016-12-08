@@ -4,7 +4,7 @@ if [[ -f $HOME/.keys ]] then
 fi
 
 export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.local/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 export EDITOR="/usr/bin/vim"
 export TERM="xterm-256color"
 export VISUAL="/usr/bin/gvim"
@@ -70,4 +70,6 @@ else
     dark
 fi
 pwrln
+# TEMP: always use dark interface
+dark
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

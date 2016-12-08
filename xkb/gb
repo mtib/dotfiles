@@ -1,0 +1,33 @@
+default  partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    include "latin"
+
+    name[Group1]="English (UK)";
+
+    key <AE02>	{ [         2,   quotedbl,  twosuperior,    oneeighth ]	};
+    key <AE03>	{ [         3,   sterling, threesuperior,    sterling ]	};
+    key <AE04>	{ [         4,     dollar,     EuroSign,   onequarter ]	};
+
+    key <AC11>	{ [apostrophe,         at, dead_circumflex, dead_caron]	};
+    key <TLDE>	{ [     grave,    notsign,          bar,          bar ]	};
+
+    key <BKSL>	{ [numbersign, asciitilde,   dead_grave,   dead_breve ]	};
+    key <LSGT>	{ [ backslash,        bar,          bar,    brokenbar ]	};
+
+    key <AD03>  { [ e, E, U2208, U2203 ] };
+    key <AD07>  { [ u, U, U00FC, U00DC ] };
+    key <AD09>  { [ o, O, U00F6, U00D6 ] };
+    key <AD10>  { [ p, P, U03C0, U03A0 ] };
+    key <AC01>  { [ a, A, U00E4, U00C4 ] };
+    key <AC02>  { [ s, S, ssharp, U03A3 ] };
+    key <AC04>  { [ f, F, U220E, U2200 ] };
+    key <AE12>  { [ equal, plus, U2260, U21D4 ] };
+    key <AC09>  { [ l, L, U03BB, U27F6 ] };
+    key <AB04>  { [ v, V, U2713, U2705 ] };
+    key <AB02>  { [ x, X, U2715, U2717 ] };
+
+
+    include "level3(ralt_switch_multikey)"
+};
+
