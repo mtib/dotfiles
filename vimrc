@@ -149,6 +149,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+nnoremap <c-f> :CtrlPBuffer<cr>
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='zenburn'
