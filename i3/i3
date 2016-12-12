@@ -38,7 +38,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec xfce4-terminal -e zsh
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Ttyp0 12' -terminal xfce4-terminal -fuzzy -opacity 90 -color-window '#ffffff, #000000, #9c9c9c' -color-normal '#ffffff, #000000, #e8e8e8, #1d1f21, #ffffff' -color-active '#ffffff, #268bd2, #e6e6e6, #268bd2, #ffffff' -color-urgent '#ffffff, #dc322f, #eaeaea, #dc322f, #ffffff'"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Monaco 26' -terminal xfce4-terminal -fuzzy -opacity 90 -fullscreen -padding 300 -color-window '#ffffff, #000000, #ffffff' -color-normal '#ffffff, #777777, #fefefe, #999999, #ffffff' -color-active '#ffffff, #268bd2, #e6e6e6, #268bd2, #ffffff' -color-urgent '#ffffff, #dc322f, #eaeaea, #dc322f, #ffffff'"
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
