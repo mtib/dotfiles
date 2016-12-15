@@ -20,6 +20,7 @@ alias vim="nvim" # default to neovim
 alias vmi="nvim" # default to neovim
 alias gut="git" # correct me being a gut
 alias :q="exit" # because vim is muscle memory
+alias rmtmp="rm *~"
 
 export VIMBG="minimalist" # default vim colorscheme
 
