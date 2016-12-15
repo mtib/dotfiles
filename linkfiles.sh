@@ -9,6 +9,7 @@ l svimrc $HOME/.svimrc
 l xinitrc $HOME/.xinitrc
 l xprofile $HOME/.xprofile
 l zprofile $HOME/.zprofile
+l gitignore $HOME/.gitignore
 mkdir -p $HOME/.config/i3{,status}
 l i3/i3 $HOME/.config/i3/config
 l i3/i3status $HOME/.config/i3status/config

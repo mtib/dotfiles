@@ -4,28 +4,31 @@ if [[ -f $HOME/.keys ]] then
 fi
 
 export GOPATH="$HOME/go"
+export GITHUB="$HOME/github"
 export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.local/bin:$HOME/.cargo/bin"
-export EDITOR="/usr/bin/vim"
-export TERM="xterm-256color"
-export VISUAL="/usr/bin/gvim"
+export EDITOR="/usr/bin/vim" # default to vim
+export TERM="xterm-256color" # enable 256 colors
+export VISUAL="/usr/bin/gvim" # unsure if working..
+
 alias diff="git diff"
+
 alias l="ls -lh"
 alias la="ls -alah"
-alias vis="vis -c ~/.visrc"
-alias vim="nvim"
-alias vmi="vim"
-alias gut="git"
-alias svim="vim -u ~/.svimrc"
-alias :q="exit"
+#alias vis="vis -c ~/.visrc"
+alias svim="vim -u ~/.svimrc" # minimal version of vim
+alias vim="nvim" # default to neovim
+alias vmi="nvim" # default to neovim
+alias gut="git" # correct me being a gut
+alias :q="exit" # because vim is muscle memory
 
-export VIMBG="default" # should be changed
-base16dir="$HOME/github/base16-shell/scripts/"
-base16light="base16-google-light"
-base16dark="base16-google-dark"
+export VIMBG="minimalist" # default vim colorscheme
 
+# clone from aur.archlinux.org
 function gitaur {
     git clone https://aur.archlinux.org/$1
 }
+
+# install aur package using pacman
 function aurinstall {
     gitaur $1
     cd $1
@@ -33,6 +36,8 @@ function aurinstall {
     cd ..
     rm -rf $1
 }
+
+# note taking function
 function note {
     case $@ in
         "-e") vim ~/.note;;
@@ -41,15 +46,8 @@ function note {
             echo -e "\033[0;37m\"$@\" \033[1;30madded to your notes.\033[0m\n";;
     esac
 }
-function dark {
-    VIMBG=$base16dark
-    source "${base16dir}${base16dark}.sh"
-}
-function light {
-    VIMBG=$base16light
-    # VIMBG="bclear"
-    source "${base16dir}${base16light}.sh"
-}
+
+# set up powerline how i like it
 function pwrln {
     POWERLEVEL9K_HOME_ICON=''
     POWERLEVEL9K_HOME_SUB_ICON=''
@@ -64,13 +62,12 @@ function pwrln {
     fi
 }
 
-curh=$(date +"%H")
-if [[ $curh -lt 18 ]] && [[ $curh -gt 10 ]]; then
-    light
-else
-    dark
-fi
 pwrln
-# TEMP: always use dark interface
-dark
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+zshsynt="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [[ -f $zshsynt ]]; then
+    source $zshsynt
+else 
+    # TODO download the zsh-syntax-highlighting file via git into $GITHUB
+    :
+fi
