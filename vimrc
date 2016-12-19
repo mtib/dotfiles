@@ -67,9 +67,9 @@ set showcmd
 syntax enable
 set encoding=utf8
 set ffs=unix,dos,mac
-set backup
-set wb
-set swapfile
+set nobackup
+set nowb
+set noswapfile
 
 " spaces insted of tab
 set expandtab

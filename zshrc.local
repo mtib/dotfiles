@@ -22,7 +22,7 @@ alias gut="git" # correct me being a gut
 alias :q="exit" # because vim is muscle memory
 alias rmtmp="rm *~"
 
-export VIMBG="minimalist" # default vim colorscheme
+export VIMBG="base" # default vim colorscheme
 
 # clone from aur.archlinux.org
 function gitaur {

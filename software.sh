@@ -16,6 +16,7 @@ p exfat-utils ffmpeg feh filezilla htop hunspell hunspell-de hunspell-en
 p i3lock i3status i3
 p xfce4-terminal
 p pavucontrol
+p xclip
 p udisks2 udiskie
 p baobab
 p thunar

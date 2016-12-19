@@ -10,6 +10,9 @@ ai() {
 cd $HOME/github
 git clone https://github.com/chriskempson/base16-shell.git
 ai discord-canary
+ai font-awesome
+ai ttf-font-awesome
+ai otf-font-awesome
 ai vertex-themes-git
 ai arc-faenza-icon-theme
 ai ttf-mononoki-git
