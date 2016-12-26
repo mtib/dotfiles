@@ -13,7 +13,7 @@ export VISUAL="/usr/bin/gvim" # unsure if working..
 alias diff="git diff"
 
 alias l="ls -lh"
-alias la="ls -alah"
+alias la="ls -Alh"
 #alias vis="vis -c ~/.visrc"
 alias svim="vim -u ~/.svimrc" # minimal version of vim
 alias vim="nvim" # default to neovim

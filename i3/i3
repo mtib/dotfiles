@@ -118,15 +118,15 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 set $ws1 "1: "
-set $ws2 "2: "
+set $ws2 "2: "
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8: "
-set $ws9 "9: "
-set $ws10 "10: "
+set $ws9 "9: "
+set $ws10 "0: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -154,7 +154,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 assign [class="Thunderbird"] workspace $ws8
 assign [class="discord"] workspace $ws9
-for_window [class="Eog"] floating enable
+for_window [class="Eom"] floating enable
 for_window [class="gnome-screenshot"] sticky enable
 
 # I3 GAPS:
@@ -196,7 +196,7 @@ bar {
             inactive_workspace #333333 #333333 #FFFFFF
 
             urgent_workspace   #C66262 #C66262 #FFFFFF
-            binding_mode       #FF00FF #FF00FF #00FF00
+            binding_mode       #FF0000 #FF0000 #FFFFFF
         }
 }
 
