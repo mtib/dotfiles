@@ -63,7 +63,7 @@ function pwrln {
     fi
 }
 
-pwrln
+# pwrln
 
 zshsynt="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 if [[ -f $zshsynt ]]; then
