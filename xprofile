@@ -1,10 +1,27 @@
-setxkbmap gb
-# setxkbmap -layout de -variant nodeadkeys
-# illum-d & # started via cron as root on boot
-xautolock -time 60 -locker "i3lock-fancy -p -t ''" &
+#!/bin/bash
+# .xprofile
+
+# pc specific settings
+case "$HOST" in
+    "tipc")
+        echo "pc"
+        compton &
+        setxkbmap -layout gb -variant nodeadkeys
+        ;;
+    *)
+        echo "other"
+        xcompmgr -cf -D 5 &
+        setxkbmap -layout de -variant nodeadkeys
+        ;;
+esac
+
+# general settings
 xset +dpms
 xset dpms 0 0 1800
-if [[ $HOST -eq "tipc" ]]; then
-    compton -b
-fi
+xautolock -time 33 -locker "i3lock-fancy -p -t ''" &
 
+# remember to start illum-d via cron if 
+# your graphics driver doesn't support the fn-keys
+#
+# otherwise:
+# illum-d &

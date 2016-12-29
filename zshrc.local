@@ -8,7 +8,7 @@ export GITHUB="$HOME/github"
 export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 export EDITOR="/usr/bin/vim" # default to vim
 export TERM="xterm-256color" # enable 256 colors
-export VISUAL="/usr/bin/gvim" # unsure if working..
+export VISUAL="/usr/bin/vim" # unsure if working..
 
 alias diff="git diff"
 
@@ -23,6 +23,7 @@ alias gut="git" # correct me being a gut
 alias :q="exit" # because vim is muscle memory
 alias rmtmp="rm *~"
 alias yaourt="yaourt --color --noconfirm"
+alias upd="yaourt -Syu"
 
 export VIMBG="base" # default vim colorscheme
 
@@ -31,7 +32,7 @@ function gitaur {
     git clone https://aur.archlinux.org/$1
 }
 
-if [[ $HOST -eq "tiyoga" ]]; then
+if [[ "$HOST" == "tiyoga" ]]; then
     function ifup {
         case $1 in
             "wifi")
@@ -40,6 +41,9 @@ if [[ $HOST -eq "tiyoga" ]]; then
             "lan")
                 sudo systemctl start dhcpcd@enp3s0
                 sudo ip link set enp3s0 up
+                ;;
+            *)
+                echo "use 'wifi' or 'lan' interface"
                 ;;
         esac
     }
@@ -52,6 +56,9 @@ if [[ $HOST -eq "tiyoga" ]]; then
             "lan")
                 sudo systemctl stop dhcpcd@enp3s0
                 sudo ip link set enp3s0 down
+                ;;
+            *)
+                echo "use 'wifi' or 'lan' interface"
                 ;;
         esac
     }

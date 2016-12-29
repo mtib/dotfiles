@@ -27,7 +27,7 @@ new_float normal
 ## WINDOW COLORS
 # TODO colors neeed some tweaking
 # active window
-set $aw #00CCFF
+set $aw #48CEFF
 # active window (unfocused)
 set $awu #7FE5FF
 # inactive window
@@ -35,9 +35,9 @@ set $iw #C5DADF
 
 # TODO organize colors more nicely
 #class                  border  backgr. text    indicator child_border
-client.focused          #FFFFFF $aw     #000000 $cb       $c1
-client.focused_inactive $tbgd   $awu    #000000 $cb       $tb
-client.unfocused        $tbgd   $iw     #000000 $cb       $tb
+client.focused          $aw     $aw     #000000 $cb       $c1
+client.focused_inactive $awu    $awu    #000000 $cb       $tb
+client.unfocused        $iw     $iw     #000000 $cb       $tb
 client.urgent           #990000 #ffffff #000000 #990000   #990000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
