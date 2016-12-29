@@ -12,6 +12,7 @@ export VISUAL="/usr/bin/gvim" # unsure if working..
 
 alias diff="git diff"
 
+alias du="du -h"
 alias l="ls -lh"
 alias la="ls -Alh"
 #alias vis="vis -c ~/.visrc"
@@ -21,6 +22,7 @@ alias vmi="nvim" # default to neovim
 alias gut="git" # correct me being a gut
 alias :q="exit" # because vim is muscle memory
 alias rmtmp="rm *~"
+alias yaourt="yaourt --color --noconfirm"
 
 export VIMBG="base" # default vim colorscheme
 
@@ -28,6 +30,32 @@ export VIMBG="base" # default vim colorscheme
 function gitaur {
     git clone https://aur.archlinux.org/$1
 }
+
+if [[ $HOST -eq "tiyoga" ]]; then
+    function ifup {
+        case $1 in
+            "wifi")
+                sudo ip link set wlp2s0 up
+                ;;
+            "lan")
+                sudo systemctl start dhcpcd@enp3s0
+                sudo ip link set enp3s0 up
+                ;;
+        esac
+    }
+
+    function ifdown {
+        case $1 in
+            "wifi")
+                sudo ip link set wlp2s0 down
+                ;;
+            "lan")
+                sudo systemctl stop dhcpcd@enp3s0
+                sudo ip link set enp3s0 down
+                ;;
+        esac
+    }
+fi
 
 # install aur package using pacman
 function aurinstall {
