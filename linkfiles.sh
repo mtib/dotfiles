@@ -21,4 +21,4 @@ mkdir -p $HOME/.config/ranger
 l rangerrc $HOME/.config/ranger/rc.conf
 # link nvim config to vim
 ln -s $HOME/.vim $HOME/.config/nvim
-ln -s $HOME/.vimrc $HOME/.config/nvim/init.vim
+ln -s $HOME/.vimrc $HOME/.vim/init.vim

@@ -14,6 +14,8 @@ p rust ruby cmake pulseaudio pitivi php nodejs npm lua linux-headers less arandr
 p aspell aspell-de audacity autoconf automake lxappearance cloc cups rofi eog evince 
 p exfat-utils ffmpeg feh filezilla htop hunspell hunspell-de hunspell-en 
 p i3lock i3status i3
+p ranger
+p gnome-screenshot gcolor2
 p xfce4-terminal
 p pavucontrol
 p xclip
@@ -24,3 +26,4 @@ p gvim
 p texmaker
 p gource
 p texlive-core
+p texlive-more

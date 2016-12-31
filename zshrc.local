@@ -27,20 +27,25 @@ alias upd="yaourt -Syu"
 
 export VIMBG="base" # default vim colorscheme
 
+function wallpaper {
+    cp $HOME/.lock.png $HOME/.lock.png.bak
+    convert $1 -resize $2\! $HOME/.lock.png
+}
+
 # clone from aur.archlinux.org
 function gitaur {
     git clone https://aur.archlinux.org/$1
 }
 
-if [[ "$HOST" == "tiyoga" ]]; then
+if [[ "$HOST" == "think" ]]; then
     function ifup {
         case $1 in
             "wifi")
-                sudo ip link set wlp2s0 up
+                sudo ip link set wlp3s0 up
                 ;;
             "lan")
-                sudo systemctl start dhcpcd@enp3s0
-                sudo ip link set enp3s0 up
+                sudo systemctl start dhcpcd@enp0s25
+                sudo ip link set enp0s25 up
                 ;;
             *)
                 echo "use 'wifi' or 'lan' interface"
@@ -51,11 +56,11 @@ if [[ "$HOST" == "tiyoga" ]]; then
     function ifdown {
         case $1 in
             "wifi")
-                sudo ip link set wlp2s0 down
+                sudo ip link set wlp3s0 down
                 ;;
             "lan")
                 sudo systemctl stop dhcpcd@enp3s0
-                sudo ip link set enp3s0 down
+                sudo ip link set enp0s25 down
                 ;;
             *)
                 echo "use 'wifi' or 'lan' interface"

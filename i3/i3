@@ -47,13 +47,13 @@ floating_modifier $mod
 ## ROFI CONFIG
 # window foreground & background
 set $rf #FFFFFF
-set $rb #000000
+set $rb argb:AA000000
 
 # highlight foreground & background
 set $rhlf #FFFFFF
-set $rhlb #000000
+set $rhlb argb:00000000
 # alternative highlight
-set $rhlalt #000000
+set $rhlalt argb:00000000
 
 # selected entry
 set $rhlself #000000
@@ -70,7 +70,7 @@ set $rurb #DC322F
 ## KEYBINDS
 bindsym $mod+Return exec xfce4-terminal -e zsh
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font 'mononoki 32px' -terminal xfce4-terminal -fuzzy -opacity 90 -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font 'mononoki 32px' -terminal xfce4-terminal -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
