@@ -226,7 +226,8 @@ bar {
 
 ## INITIAL CONFIG
 # set wallpaper
-exec_always feh --bg-tile /home/mtib/.lock.png
+exec "bash $HOME/.feh_update.sh"
+# exec_always feh --bg-tile /home/mtib/.lock.png
 
 #exec thunderbird
 #exec discord-canary

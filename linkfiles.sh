@@ -9,6 +9,8 @@ l svimrc $HOME/.svimrc
 l xinitrc $HOME/.xinitrc
 l xprofile $HOME/.xprofile
 l zprofile $HOME/.zprofile
+l feh_update.sh $HOME/.feh_update.sh
+l feh_constants.sh $HOME/.feh_constants.sh
 l gitignore $HOME/.gitignore
 mkdir -p $HOME/.config/i3{,status}
 l i3/i3 $HOME/.config/i3/config

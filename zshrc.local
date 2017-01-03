@@ -11,7 +11,6 @@ export TERM="xterm-256color" # enable 256 colors
 export VISUAL="/usr/bin/vim" # unsure if working..
 
 alias diff="git diff"
-
 alias du="du -h"
 alias l="ls -lh"
 alias la="ls -Alh"
@@ -24,12 +23,17 @@ alias :q="exit" # because vim is muscle memory
 alias rmtmp="rm *~"
 alias yaourt="yaourt --color --noconfirm"
 alias upd="yaourt -Syu"
+alias yinstall="yaourt --color --noconfirm -S"
+alias say="espeak -v german"
 
 export VIMBG="base" # default vim colorscheme
 
 function wallpaper {
-    cp $HOME/.lock.png $HOME/.lock.png.bak
-    convert $1 -resize $2\! $HOME/.lock.png
+    # $1 is file
+    # $2 is screen resolution
+    #    e.g. 1920x1080 or 1366x768
+    # $3 is output file
+    convert $1 -resize $2\! $3
 }
 
 # clone from aur.archlinux.org
@@ -78,6 +82,44 @@ function aurinstall {
     rm -rf $1
 }
 
+# SETUP BACKGROUNDs
+source $HOME/.feh_constants.sh
+
+# ALLOW SETTING OF PICTURES AS BG
+function setbg {
+    # $1 is file
+    # $2 is time
+    #    out of night, morning, midday, afternoon, evening
+    function tell {
+        echo "copying $1 to $2"
+        rm $2
+        convert $1 $2
+    }
+    case $2 in
+        "night")
+            tell $1 $TBG_NIGHT
+            ;;
+        "morning")
+            tell $1 $TBG_MORNING
+            ;;
+        "midday")
+            tell $1 $TBG_MIDDAY
+            ;;
+        "afternoon")
+            tell $1 $TBG_AFTERNOON
+            ;;
+        "evening")
+            tell $1 $TBG_EVENING
+            ;;
+        *)
+            echo "you need to specify at which time to"
+            echo "show the wallpaper:"
+            echo "{night, morning, midday, afternoon, evening}"
+            echo "you can use 'wallpaper file resolution output'"
+            echo "to get the file in the correct resolution"
+    esac
+}
+
 # note taking function
 function note {
     case $@ in
@@ -112,3 +154,5 @@ else
     # TODO download the zsh-syntax-highlighting file via git into $GITHUB
     :
 fi
+
+
