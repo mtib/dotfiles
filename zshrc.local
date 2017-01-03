@@ -28,13 +28,32 @@ alias say="espeak -v german"
 
 export VIMBG="base" # default vim colorscheme
 
-function wallpaper {
-    # $1 is file
-    # $2 is screen resolution
-    #    e.g. 1920x1080 or 1366x768
-    # $3 is output file
-    convert $1 -resize $2\! $3
-}
+case $HOST in
+    "think")
+        function wallpaper {
+            echo "assuming 1366x768px screen"
+            convert $1 -resize 1366x768 $2
+        }
+        ;;
+    "tipc")
+        function wallpaper {
+            echo "assuming 3840x2160px screen"
+            convert $1 -resize 3840x2160 /tmp/$1
+            echo "4knoborder cutting on image"
+            4knoborder.sh /tmp/$1
+            mv /tmp/cut-$1 $2
+        }
+        ;;
+    *)
+        function wallpaper {
+            # $1 is file
+            # $2 is screen resolution
+            #    e.g. 1920x1080 or 1366x768
+            # $3 is output file
+            convert $1 -resize $2\! $3
+        }
+        ;;
+esac
 
 # clone from aur.archlinux.org
 function gitaur {
@@ -118,6 +137,7 @@ function setbg {
             echo "you can use 'wallpaper file resolution output'"
             echo "to get the file in the correct resolution"
     esac
+    convert $TBG_MORNING $TBG_MIDDAY $TBG_AFTERNOON $TBG_EVENING $TBG_NIGHT +append $HOME/.bg.preview.jpg
 }
 
 # note taking function
