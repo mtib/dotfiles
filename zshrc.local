@@ -6,16 +6,16 @@ fi
 export GOPATH="$HOME/go"
 export GITHUB="$HOME/github"
 export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.local/bin:$HOME/.cargo/bin"
-export EDITOR="/usr/bin/vim" # default to vim
+export EDITOR="/usr/bin/nvim" # default to vim
 export TERM="xterm-256color" # enable 256 colors
-export VISUAL="/usr/bin/vim" # unsure if working..
+export VISUAL="/usr/bin/nvim" # unsure if working..
 
 alias diff="git diff"
 alias du="du -h"
 alias l="ls -lh"
 alias la="ls -Alh"
 #alias vis="vis -c ~/.visrc"
-alias svim="vim -u ~/.svimrc" # minimal version of vim
+alias svim="nvim -u ~/.svimrc" # minimal version of vim
 alias vim="nvim" # default to neovim
 alias vmi="nvim" # default to neovim
 alias gut="git" # correct me being a gut
@@ -31,13 +31,13 @@ export VIMBG="base" # default vim colorscheme
 case $HOST in
     "think")
         function wallpaper {
-            echo "assuming 1366x768px screen"
+            echo "\e[32massuming 1366x768px screen"
             convert $1 -resize 1366x768 $2
         }
         ;;
     "tipc")
         function wallpaper {
-            echo "assuming 3840x2160px screen"
+            echo "\e[32massuming 3840x2160px screen"
             convert $1 -resize 3840x2160 /tmp/$1
             echo "4knoborder cutting on image"
             4knoborder.sh /tmp/$1
@@ -65,35 +65,46 @@ if [[ "$HOST" == "think" ]]; then
         case $1 in
             "wifi")
                 sudo ip link set wlp3s0 up
+                echo -n "\e[32m"
+                echo "starting wifi"
                 ;;
             "lan")
                 sudo systemctl start dhcpcd@enp0s25
                 sudo ip link set enp0s25 up
+                echo -n "\e[32m"
+                echo "starting lan"
                 ;;
             *)
-                echo "use 'wifi' or 'lan' interface"
+                echo "\e[31muse 'wifi' or 'lan' interface"
                 ;;
         esac
+        echo -n "\e[0m"
     }
 
     function ifdown {
         case $1 in
             "wifi")
                 sudo ip link set wlp3s0 down
+                echo -n "\e[32m"
+                echo "shutting down wifi"
                 ;;
             "lan")
                 sudo systemctl stop dhcpcd@enp3s0
                 sudo ip link set enp0s25 down
+                echo -n "\e[32m"
+                echo "shutting down lan"
                 ;;
             *)
-                echo "use 'wifi' or 'lan' interface"
+                echo "\e[31muse 'wifi' or 'lan' interface"
                 ;;
         esac
+        echo -n "\e[0m"
     }
 fi
 
 # install aur package using pacman
 function aurinstall {
+    echo "\e[31muse \e[32myinstall \e[31minstead\e[0m"
     gitaur $1
     cd $1
     makepkg -sri
@@ -110,7 +121,7 @@ function setbg {
     # $2 is time
     #    out of night, morning, midday, afternoon, evening
     function tell {
-        echo "copying $1 to $2"
+        echo "copying \e[32m$1\e[0m to \e[32m$2\e[0m"
         rm $2
         convert $1 $2
     }
@@ -133,8 +144,8 @@ function setbg {
         *)
             echo "you need to specify at which time to"
             echo "show the wallpaper:"
-            echo "{night, morning, midday, afternoon, evening}"
-            echo "you can use 'wallpaper file resolution output'"
+            echo "\e[37m{night, morning, midday, afternoon, evening}\e[0m"
+            echo "you can use '\e[37mwallpaper file resolution output\e[0m'"
             echo "to get the file in the correct resolution"
     esac
     convert $TBG_MORNING $TBG_MIDDAY $TBG_AFTERNOON $TBG_EVENING $TBG_NIGHT +append $HOME/.bg.preview.jpg
@@ -150,29 +161,24 @@ function note {
     esac
 }
 
-# set up powerline how i like it
-function pwrln {
-    POWERLEVEL9K_HOME_ICON=''
-    POWERLEVEL9K_HOME_SUB_ICON=''
-    POWERLEVEL9K_FOLDER_ICON=''
-    POWERLEVEL9K_STATUS_VERBOSE=false
-    POWERLEVEL9K_MODE='awesome-fontconfig'
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-    powerlvl="/usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme"
-    if [[ -f $powerlvl ]] then
-        source $powerlvl
-    fi
-}
-
-# pwrln
-
+# zsh syntax highlighting
 zshsynt="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 if [[ -f $zshsynt ]]; then
     source $zshsynt
 else 
-    # TODO download the zsh-syntax-highlighting file via git into $GITHUB
-    :
+    echo "You need to download the zsh-syntax-highlighting file"
+    read -p "do you want to download it? [Y/n]" answ
+    case $answ in
+        [Yy])
+            echo "root is required to install zsh-syntax-highlighting"
+            wget -O $zshsynt "https://raw.githubusercontent.com/zsh-users/zsh-syntax-highlighting/master/zsh-syntax-highlighting.zsh"
+            ;;
+        [Nn])
+            echo "root is required to disable this prompt:"
+            sudo touch $zshsynt
+            ;;
+        *)
+            echo "answer not recognized, you will be asked again next time"
+    esac
 fi
-
 
