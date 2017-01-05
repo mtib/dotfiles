@@ -32,7 +32,11 @@ case $HOST in
     "think")
         function wallpaper {
             echo "\e[32massuming 1366x768px screen"
-            convert $1 -resize 1366x768 $2
+            convert $1 -resize 1366x768! $2
+        }
+        function smartpaper {
+            wallpaper $1 /tmp/$1
+            setbg /tmp/$1 $2
         }
         ;;
     "tipc")
@@ -61,16 +65,18 @@ function gitaur {
 }
 
 if [[ "$HOST" == "think" ]]; then
+    wifi="wlp3s0"
+    eth0="enp0s25"
     function ifup {
         case $1 in
             "wifi")
-                sudo ip link set wlp3s0 up
+                sudo ip link set $wifi up
                 echo -n "\e[32m"
                 echo "starting wifi"
                 ;;
             "lan")
-                sudo systemctl start dhcpcd@enp0s25
-                sudo ip link set enp0s25 up
+                sudo systemctl start dhcpcd@$eth0
+                sudo ip link set $eth0 up
                 echo -n "\e[32m"
                 echo "starting lan"
                 ;;
@@ -84,13 +90,13 @@ if [[ "$HOST" == "think" ]]; then
     function ifdown {
         case $1 in
             "wifi")
-                sudo ip link set wlp3s0 down
+                sudo ip link set $wifi down
                 echo -n "\e[32m"
                 echo "shutting down wifi"
                 ;;
             "lan")
-                sudo systemctl stop dhcpcd@enp3s0
-                sudo ip link set enp0s25 down
+                sudo systemctl stop dhcpcd@$eth0
+                sudo ip link set $eth0 down
                 echo -n "\e[32m"
                 echo "shutting down lan"
                 ;;

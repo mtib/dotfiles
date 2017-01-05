@@ -17,7 +17,7 @@ set $tbgd #1D1F21
 
 ## GENERAL I3 CONFIG
 # Font
-font pango:Mononoki 11
+font pango:Terminus (TTF) 12
 
 # req. for i3-gaps
 hide_edge_borders both
@@ -70,7 +70,7 @@ set $rurb #DC322F
 ## KEYBINDS
 bindsym $mod+Return exec xfce4-terminal -e zsh
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font 'mononoki 32px' -terminal xfce4-terminal -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font 'xos4 terminus 32px' -terminal xfce4-terminal -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
@@ -109,7 +109,7 @@ bindsym $mod+v split v
 
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -146,14 +146,14 @@ set $ws10 "0: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
+bindsym $mod+2 workspace $ws2; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
-bindsym $mod+9 exec i3-msg workspace $ws9; exec i3-msg ' exec /usr/bin/bash -c "ps aux > /tmp/.open && grep -e \"[D]iscord\" /tmp/.open && echo \"false\" > /tmp/.open || i3-msg exec discord-canary && echo \"true\" > /tmp/.open"'
+bindsym $mod+9 workspace $ws9; exec [ $(ps h -C DiscordCanary | wc -l) = 0 ] && /usr/bin/discord-canary
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
@@ -204,6 +204,25 @@ mode "resize" {
 
 # TODO own modes?
 bindsym $mod+r mode "resize"
+
+mode "starter" {
+
+    bindsym 1 workspace $ws1
+    bindsym 2 workspace $ws2; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
+    bindsym 3 workspace $ws3
+    bindsym 4 workspace $ws4
+    bindsym 5 workspace $ws5
+    bindsym 6 workspace $ws6
+    bindsym 7 workspace $ws7
+    bindsym 8 workspace $ws8
+    bindsym 9 workspace $ws9; exec /usr/bin/bash -c "ps aux > /tmp/.open && grep -e \"[D]iscord\" /tmp/.open && echo \"false\" > /tmp/.open || i3-msg exec discord-canary && echo \"true\" > /tmp/.open"
+
+    # TODO single character starting apps
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+s mode "starter"
 
 ## BAR CONFIG
 bar {

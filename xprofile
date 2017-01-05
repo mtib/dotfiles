@@ -10,7 +10,10 @@ case "$HOST" in
         ;;
     *)
         echo "other"
-        xcompmgr -cf -D 5 &
+        # currently not running a comp-mgr
+        # because of battery life
+
+        # xcompmgr -cf -D 5 &
         setxkbmap -layout de -variant nodeadkeys
         ;;
 esac
