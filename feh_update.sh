@@ -1,5 +1,9 @@
 #!/bin/bash
 source $HOME/.feh_constants.sh
+if [ -f $HOME/.screenlayout/mega.sh ];
+then
+    sleep 2; source $HOME/.screenlayout/mega.sh
+fi
 while true; do
     case $(date +%H) in
         0[0-6])
@@ -22,5 +26,10 @@ while true; do
             i3-nagbar -m "error occurred in feh_update.sh"
             ;;
     esac
-    sleep 5m
+    if [ $1 = "now" ];
+    then
+        exit
+    else
+        sleep 5m
+    fi
 done

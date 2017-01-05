@@ -31,7 +31,7 @@ export VIMBG="base" # default vim colorscheme
 case $HOST in
     "think")
         function wallpaper {
-            echo "\e[32massuming 1366x768px screen"
+            echo "\e[32massuming 1366x768px screen\e[0m"
             convert $1 -resize 1366x768! $2
         }
         function smartpaper {
@@ -41,11 +41,10 @@ case $HOST in
         ;;
     "tipc")
         function wallpaper {
-            echo "\e[32massuming 3840x2160px screen"
-            convert $1 -resize 3840x2160 /tmp/$1
+            echo "\e[32massuming 3840x2160px screen\e[0m"
+            convert $1 -resize 3840x2160 $2
             echo "4knoborder cutting on image"
-            4knoborder.sh /tmp/$1
-            mv /tmp/cut-$1 $2
+            4knoborder.sh $2
         }
         ;;
     *)

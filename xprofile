@@ -2,11 +2,11 @@
 # .xprofile
 
 # pc specific settings
-case "$HOST" in
+case "$(cat /etc/hostname)" in
     "tipc")
         echo "pc"
         compton &
-        setxkbmap -layout gb -variant nodeadkeys
+        setxkbmap gb
         ;;
     *)
         echo "other"
