@@ -22,7 +22,7 @@ alias gut="git" # correct me being a gut
 alias :q="exit" # because vim is muscle memory
 alias rmtmp="rm *~"
 alias yaourt="yaourt --color --noconfirm"
-alias upd="yaourt -Syu"
+alias upd="yaourt -Syua"
 alias yinstall="yaourt --color --noconfirm -S"
 alias say="espeak -v german"
 
