@@ -12,11 +12,14 @@ while true; do
         0[7-9])
             feh --bg-tile $TBG_MORNING
             ;;
-        1[0-6])
+        1[0-4])
             feh --bg-tile $TBG_MIDDAY
             ;;
-        1[7-9])
+        1[5-8])
             feh --bg-tile $TBG_AFTERNOON
+            ;;
+        19)
+            feh --bg-tile $TBG_EVENING
             ;;
         2*)
             feh --bg-tile $TBG_EVENING
