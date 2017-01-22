@@ -81,8 +81,10 @@ bindsym $mod+g exec gcolor2
 bindsym $mod+t exec thunar
 bindsym $mod+p exec pavucontrol
 bindsym $mod+x exec gnome-screenshot -i
+bindcode 107 exec gnome-screenshot -i
 #bindsym $mod+Shift+a exec atom -n
 bindsym $mod+l exec "i3lock-fancy -p -t ''"
+bindcode 78 exec "i3lock-fancy -p -t ''"
 bindsym $mod+Shift+v exec konsole -e vim
 
 # moving between workspaces
@@ -153,7 +155,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9; exec [ $(ps h -C DiscordCanary | wc -l) = 0 ] && /usr/bin/discord-canary
+bindsym $mod+9 workspace $ws9; exec [ $(ps h -C DiscordCanary | wc -l) = 0 ] && /usr/bin/discord
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
@@ -218,6 +220,9 @@ mode "starter" {
     bindsym 9 workspace $ws9; exec /usr/bin/bash -c "ps aux > /tmp/.open && grep -e \"[D]iscord\" /tmp/.open && echo \"false\" > /tmp/.open || i3-msg exec discord-canary && echo \"true\" > /tmp/.open"
 
     # TODO single character starting apps
+    bindsym l exec bash "$HOME/.screenlayout/mega.sh"
+    bindsym b exec bash "$HOME/.screenlayout/megabzl.sh"
+    bindsym r exec bash "$HOME/.feh_update.sh"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -253,3 +258,4 @@ exec "bash $HOME/.feh_update.sh"
 #exec --no-startup-id compton -D 3
 exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/xfce4-terminal -e zsh; exec /usr/bin/xfce4-terminal -e $HOME/bin/ranger.sh;'
 exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/firefox; workspace $ws1'
+exec bash ~/.overkill.sh

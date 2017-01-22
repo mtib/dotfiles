@@ -7,6 +7,7 @@ case "$(cat /etc/hostname)" in
         echo "pc"
         compton &
         setxkbmap gb
+        # setxkbmap de
         ;;
     *)
         echo "other"

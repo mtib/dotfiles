@@ -1,9 +1,17 @@
 #!/bin/bash
 source $HOME/.feh_constants.sh
-if [ -f $HOME/.screenlayout/mega.sh ];
-then
-    sleep 2; source $HOME/.screenlayout/mega.sh
-fi
+# if [ -f $HOME/.screenlayout/mega.sh ];
+# then
+#     # wait times
+#     # 5 | works 40%
+#     # 6 | works 50%
+#     # 10 | works 0%
+#     #source $HOME/.screenlayout/mega.sh
+#     # use $mod+s l instead...
+#     # maybe this can be put into
+#     # /etc/X11/Xsession.d/ or the delay has to be longer...
+#     :
+# fi
 while true; do
     case $(date +%H) in
         0[0-6])

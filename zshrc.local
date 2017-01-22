@@ -21,12 +21,15 @@ alias vmi="nvim" # default to neovim
 alias gut="git" # correct me being a gut
 alias :q="exit" # because vim is muscle memory
 alias rmtmp="rm *~"
-alias yaourt="yaourt --color --noconfirm"
-alias upd="yaourt -Syua"
+alias yaourt="yaourt --color"
 alias yinstall="yaourt --color --noconfirm -S"
 alias say="espeak -v german"
 
 export VIMBG="base" # default vim colorscheme
+
+function upd() {
+    yaourt -Syyau # aur update
+}
 
 case $HOST in
     "think")
@@ -61,6 +64,15 @@ esac
 # clone from aur.archlinux.org
 function gitaur {
     git clone https://aur.archlinux.org/$1
+}
+
+function sandoc {
+    sdcf="/tmp/sdcfile.md"
+    if [ -f header.md ]; then
+        cat header.md > $sdcf;
+    fi
+    iconv -t utf-8 $1.md >> $sdcf;
+    pandoc -f markdown_github+escaped_line_breaks-blank_before_header+backtick_code_blocks+fancy_lists+table_captions+pipe_tables+pandoc_title_block -V geometry:margin=1in -V papersize:A4 -V fontsize:11pt -V monofont:Terminus -So $1.pdf $sdcf
 }
 
 if [[ "$HOST" == "think" ]]; then
@@ -107,14 +119,9 @@ if [[ "$HOST" == "think" ]]; then
     }
 fi
 
-# install aur package using pacman
+# used for backwards compatability
 function aurinstall {
-    echo "\e[31muse \e[32myinstall \e[31minstead\e[0m"
-    gitaur $1
-    cd $1
-    makepkg -sri
-    cd ..
-    rm -rf $1
+    yaourt -S $1
 }
 
 # SETUP BACKGROUNDs

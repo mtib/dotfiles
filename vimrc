@@ -52,6 +52,7 @@ call vundle#end()
 
 filetype plugin on
 filetype indent on
+let mapleader=","
 set ruler
 set wrap
 set cmdheight=1
@@ -180,6 +181,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
+let g:pymode_python = 'python3'
+let g:pymode_lint_checkers = ['pyflakes']
+let g:pymode_warnings = 0
+let g:pymode_folding = 0
 let g:ycm_confirm_extra_conf = 0
 
 set guifont=mononoki\ 12
