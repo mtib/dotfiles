@@ -23,8 +23,9 @@ alias rmtmp="rm *~"
 alias yaourt="yaourt --color"
 alias yinstall="yaourt --color --noconfirm -S"
 alias say="espeak -v german"
+alias ccat="highlight -O ansi"
 
-export VIMBG="Tomorrow-Night" # default vim colorscheme
+export VIMBG="Tomorrow-Night-Eighties" # default vim colorscheme
 
 function upd() {
     yaourt -Syyau # aur update
