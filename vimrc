@@ -129,6 +129,15 @@ augroup ft_java
     endfunction
 augroup END
 
+augroup ft_arduino
+    autocmd!
+    autocmd BufNewFile,BufRead *.ino call SetArduinoKeymap()
+    function! SetArduinoKeymap()
+        nnoremap ,u :!make upload<CR>
+        " nnoremap ,m :!bash -c "make monitor"<CR>
+    endfunction
+augroup END
+
 " NERDTree
 noremap <C-n> :NERDTreeToggle<CR>
 

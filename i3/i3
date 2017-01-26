@@ -182,8 +182,8 @@ for_window [class="gnome-screenshot"] sticky enable
 
 ## I3 GAPS gaps
 for_window [class="^.*"] border pixel 1
-gaps inner 15
-gaps outer 5
+gaps inner 6
+gaps outer 2
 
 ## TESTING
 # reload the configuration file
