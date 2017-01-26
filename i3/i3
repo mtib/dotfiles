@@ -75,7 +75,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -font 'xos4 terminus 32px' -
 # curr: bg txt
 # wind: inner outer dots
 bindsym $mod+m exec qterminal -e "$HOME/bin/ranger.sh"
-bindsym $mod+u exec qterminal -e tmux --hide-borders
+bindsym $mod+u exec qterminal -e tmux
 bindsym $mod+Shift+f fullscreen global
 bindsym $mod+g exec gcolor2
 bindsym $mod+t exec thunar
@@ -85,7 +85,7 @@ bindcode 107 exec gnome-screenshot -i
 #bindsym $mod+Shift+a exec atom -n
 bindsym $mod+l exec "i3lock-fancy -p -t ''"
 bindcode 78 exec "i3lock-fancy -p -t ''"
-bindsym $mod+Shift+v exec konsole -e vim
+bindsym $mod+Shift+v exec VIMBG="Tomorrow-Night-Eighties" qterminal -e vim
 
 # moving between workspaces
 bindcode $mod+Shift+59 move workspace to output left
