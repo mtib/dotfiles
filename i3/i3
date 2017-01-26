@@ -68,14 +68,14 @@ set $rurf #FFFFFF
 set $rurb #DC322F
 
 ## KEYBINDS
-bindsym $mod+Return exec xfce4-terminal -e zsh
+bindsym $mod+Return exec qterminal -e zsh
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font 'xos4 terminus 32px' -terminal xfce4-terminal -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font 'xos4 terminus 32px' -terminal qterminal -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
-bindsym $mod+m exec xfce4-terminal -e "$HOME/bin/ranger.sh"
-bindsym $mod+u exec xfce4-terminal -e tmux --hide-borders
+bindsym $mod+m exec qterminal -e "$HOME/bin/ranger.sh"
+bindsym $mod+u exec qterminal -e tmux --hide-borders
 bindsym $mod+Shift+f fullscreen global
 bindsym $mod+g exec gcolor2
 bindsym $mod+t exec thunar
@@ -224,6 +224,8 @@ mode "starter" {
     bindsym b exec bash "$HOME/.screenlayout/megabzl.sh"
     bindsym r exec bash "$HOME/.feh_update.sh"
 
+    bindsym y exec zsh "$HOME/.ytd.sh"
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -256,6 +258,6 @@ exec "bash $HOME/.feh_update.sh"
 #exec thunderbird
 #exec discord-canary
 #exec --no-startup-id compton -D 3
-exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/xfce4-terminal -e zsh; exec /usr/bin/xfce4-terminal -e $HOME/bin/ranger.sh;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/qterminal -e zsh; exec /usr/bin/qterminal -e $HOME/bin/ranger.sh;'
 exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/firefox; workspace $ws1'
 exec bash ~/.overkill.sh
