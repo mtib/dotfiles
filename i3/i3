@@ -27,11 +27,11 @@ new_float normal
 ## WINDOW COLORS
 # TODO colors neeed some tweaking
 # active window
-set $aw #48CEFF
+set $aw #FFFFFF
 # active window (unfocused)
-set $awu #7FE5FF
+set $awu #DDDDDD
 # inactive window
-set $iw #C5DADF
+set $iw #AAAAAA
 
 # TODO organize colors more nicely
 #class                  border  backgr. text    indicator child_border
@@ -224,12 +224,31 @@ mode "starter" {
     bindsym b exec bash "$HOME/.screenlayout/megabzl.sh"
     bindsym r exec bash "$HOME/.feh_update.sh"
 
+    bindsym o exec "bash $HOME/.screenlayout/megabzl.sh; sleep .5; bash $HOME/.screenlayout/mega.sh;bash $HOME/.feh_update"
+
     bindsym y exec zsh "$HOME/.ytd.sh"
+
+    bindsym f mode "firefox"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $mod+s mode "starter"
+
+mode "firefox" {
+    bindsym f exec firefox --new-window
+    bindsym p exec firefox --private-window
+
+    bindsym y exec firefox --new-window "https://youtube.com/feed/subscriptions"
+    bindsym r exec firefox --new-window "https://reddit.com/"
+    bindsym g exec firefox --new-window "https://github.com"
+    bindsym w exec firefox --new-window "https://web.whatsapp.com"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 
 ## BAR CONFIG
 bar {
@@ -258,6 +277,4 @@ exec "bash $HOME/.feh_update.sh"
 #exec thunderbird
 #exec discord-canary
 #exec --no-startup-id compton -D 3
-exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/qterminal -e zsh; exec /usr/bin/qterminal -e $HOME/bin/ranger.sh;'
-exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/firefox; workspace $ws1'
 exec bash ~/.overkill.sh

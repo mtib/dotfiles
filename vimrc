@@ -31,7 +31,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 
 " Language Support
 Plugin 'mattn/emmet-vim'
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
 Plugin 'fatih/vim-go'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'eagletmt/neco-ghc'
@@ -190,10 +190,11 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
-let g:pymode_python = 'python3'
-let g:pymode_lint_checkers = ['pyflakes']
-let g:pymode_warnings = 0
-let g:pymode_folding = 0
+let g:syntastic_python_checkers = []
+" let g:pymode_python = 'python3'
+" let g:pymode_lint_checkers = []
+" let g:pymode_warnings = 0
+" let g:pymode_folding = 0
 let g:ycm_confirm_extra_conf = 0
 
 set guifont=mononoki\ 12

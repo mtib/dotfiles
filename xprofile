@@ -4,28 +4,27 @@
 # pc specific settings
 case "$(cat /etc/hostname)" in
     "tipc")
-        echo "pc"
         compton &
         setxkbmap gb
-        # setxkbmap de
+        xset s off -dpms
         ;;
     *)
-        echo "other"
-        # currently not running a comp-mgr
-        # because of battery life
-
-        # xcompmgr -cf -D 5 &
         setxkbmap -layout de -variant nodeadkeys
+        xset +dpms
+        xset dpms 0 0 1860
+        xset s off
         ;;
 esac
 
 # general settings
-xset +dpms
-xset dpms 0 0 1800
-xautolock -time 33 -locker "i3lock-fancy -p -t ''" &
+xautolock -time 30 -locker "i3lock-fancy -p -t ''" &
 
-# remember to start illum-d via cron if 
+(
+    sleep 10;
+    source $HOME/.screenlayout/mega.sh
+    sleep 10;
+    source $HOME/.feh_update.sh
+) &
+
+# remember to start illum-d via cron if
 # your graphics driver doesn't support the fn-keys
-#
-# otherwise:
-# illum-d &

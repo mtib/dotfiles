@@ -8,7 +8,7 @@ export GITHUB="$HOME/github"
 export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 export EDITOR="/usr/bin/vim" # default to vim
 export TERM="xterm-256color" # enable 256 colors
-export VISUAL="/usr/bin/gvim" # unsure if working..
+export VISUAL="/usr/bin/vim" # unsure if working..
 
 alias diff="git diff"
 alias du="du -h"

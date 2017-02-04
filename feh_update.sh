@@ -15,22 +15,22 @@ source $HOME/.feh_constants.sh
 while true; do
     case $(date +%H) in
         0[0-6])
-            feh --bg-tile $TBG_NIGHT
+            feh --bg-scale $TBG_NIGHT
             ;;
         0[7-9])
-            feh --bg-tile $TBG_MORNING
+            feh --bg-scale $TBG_MORNING
             ;;
         1[0-4])
-            feh --bg-tile $TBG_MIDDAY
+            feh --bg-scale $TBG_MIDDAY
             ;;
         1[5-8])
-            feh --bg-tile $TBG_AFTERNOON
+            feh --bg-scale $TBG_AFTERNOON
             ;;
         19)
-            feh --bg-tile $TBG_EVENING
+            feh --bg-scale $TBG_EVENING
             ;;
         2*)
-            feh --bg-tile $TBG_EVENING
+            feh --bg-scale $TBG_EVENING
             ;;
         *)
             # default == unreachable!
