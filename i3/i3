@@ -204,27 +204,16 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-# TODO own modes?
 bindsym $mod+r mode "resize"
 
 mode "starter" {
-
-    bindsym 1 workspace $ws1
-    bindsym 2 workspace $ws2; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
-    bindsym 3 workspace $ws3
-    bindsym 4 workspace $ws4
-    bindsym 5 workspace $ws5
-    bindsym 6 workspace $ws6
-    bindsym 7 workspace $ws7
-    bindsym 8 workspace $ws8
-    bindsym 9 workspace $ws9; exec /usr/bin/bash -c "ps aux > /tmp/.open && grep -e \"[D]iscord\" /tmp/.open && echo \"false\" > /tmp/.open || i3-msg exec discord-canary && echo \"true\" > /tmp/.open"
-
     # TODO single character starting apps
     bindsym l exec bash "$HOME/.screenlayout/mega.sh"
+    bindsym g exec bash "$HOME/.screenlayout/game.sh"
     bindsym b exec bash "$HOME/.screenlayout/megabzl.sh"
     bindsym r exec bash "$HOME/.feh_update.sh"
 
-    bindsym o exec "bash $HOME/.screenlayout/megabzl.sh; sleep .5; bash $HOME/.screenlayout/mega.sh;bash $HOME/.feh_update"
+    bindsym o exec "bash $HOME/.screenlayout/megabzl.sh; sleep .2; bash $HOME/.screenlayout/mega.sh;bash $HOME/.feh_update"
 
     bindsym y exec zsh "$HOME/.ytd.sh"
 
@@ -245,20 +234,24 @@ mode "firefox" {
     bindsym g exec firefox --new-window "https://github.com"
     bindsym w exec firefox --new-window "https://web.whatsapp.com"
 
+    bindsym s mode "starter"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
 
 ## BAR CONFIG
+set $statusbg #262626
+set $statussep #262626
+set $statustxt #F0F0F0
 bar {
     status_command py3status
     mode hide
     position bottom
     colors {
-        background $tb
-        statusline $c1
-        separator $tb
+        background $statusbg
+        statusline $statustxt
+        separator $statussep
 
         focused_workspace  #FFFFFF #FFFFFF #000000
         active_workspace   #666666 #666666 #000000

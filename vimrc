@@ -9,6 +9,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " Update Vundle with Vundle
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'xolox/vim-misc'
 
 " Visual(-only) Plugins
 Plugin 'chriskempson/base16-vim'
@@ -17,6 +18,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
 
 " File Openers
 Plugin 'scrooloose/nerdtree'

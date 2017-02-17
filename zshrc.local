@@ -36,6 +36,10 @@ function ytd() {
     zsh ~/.ytd.sh
 }
 
+function pan {
+    pandoc -V geometry:margin=.8in -f markdown_github+implicit_header_references+fancy_lists+startnum+definition_lists+table_captions+pipe_tables+pandoc_title_block+superscript+subscript+tex_math_dollars+raw_tex+latex_macros -sS $1 -o $2
+}
+
 case $HOST in
     "think")
         function wallpaper {

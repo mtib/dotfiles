@@ -4,7 +4,8 @@
 # pc specific settings
 case "$(cat /etc/hostname)" in
     "tipc")
-        compton &
+        compton -t -8 -l -8 -o 1.0 -D 4 -r 5 -m 0.9 &
+        conky &
         setxkbmap gb
         xset s off -dpms
         ;;
