@@ -52,6 +52,9 @@ Plugin 'tpope/vim-surround'
 " Web Integration
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
+
+" Aligner
+Plugin 'junegunn/vim-easy-align'
 call vundle#end()
 
 filetype plugin on
@@ -95,6 +98,8 @@ colorscheme $VIMBG
 
 set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
 " let g:ctrlp_user_command = 'find %s -type f'
+
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
 " HASKELL
 augroup ft_haskell
