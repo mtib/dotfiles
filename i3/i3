@@ -74,6 +74,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -font 'xos4 terminus 32px' -
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
+bindsym $mod+b exec blueman-applet; exec blueman-manager
 bindsym $mod+m exec qterminal -e "$HOME/bin/ranger.sh"
 bindsym $mod+u exec qterminal -e tmux
 bindsym $mod+Shift+f fullscreen global
@@ -242,7 +243,7 @@ mode "firefox" {
 
 ## BAR CONFIG
 set $statusbg #262626
-set $statussep #262626
+set $statussep #404040
 set $statustxt #F0F0F0
 bar {
     status_command py3status

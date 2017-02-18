@@ -24,11 +24,17 @@ alias yaourt="yaourt --color"
 alias yinstall="yaourt --color --noconfirm -S"
 alias say="espeak -v german"
 alias ccat="highlight -O ansi"
+alias i3s="i3-swallow"
+alias i3d="i3-swallow -d"
 
-export VIMBG="Tomorrow-Night-Eighties" # default vim colorscheme
+# vim shortcuts
+alias vzs="vim $HOME/.zshrc.local"
+alias vi3="vim $GITHUB/dotfiles/i3/i3"
+
+export VIMBG="256-grayvim" # default vim colorscheme
 
 function upd() {
-    yaourt -Syyau # aur update
+    yaourt -Syyau --noconfirm # aur update
 }
 
 export YTDIR="$HOME/Desktop/Youtube"
@@ -177,7 +183,7 @@ function note {
     case $@ in
         "-e") vim ~/.note;;
         "") cat ~/.note|less;;
-        *) echo -e "$@\n" >> ~/.note
+        *) echo -e "$@" >> ~/.note
             echo -e "\033[0;37m\"$@\" \033[1;30madded to your notes.\033[0m\n";;
     esac
 }
@@ -192,7 +198,7 @@ else
     case $answ in
         [Yy])
             echo "root is required to install zsh-syntax-highlighting"
-            wget -O $zshsynt "https://raw.githubusercontent.com/zsh-users/zsh-syntax-highlighting/master/zsh-syntax-highlighting.zsh"
+            sudo wget -O $zshsynt "https://raw.githubusercontent.com/zsh-users/zsh-syntax-highlighting/master/zsh-syntax-highlighting.zsh"
             ;;
         [Nn])
             echo "root is required to disable this prompt:"

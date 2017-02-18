@@ -8,6 +8,7 @@
 
 general {
         output_format = "i3bar"
+        separator = " &lt;&gt; "
         colors = true
         interval = 10
         color = "#FFFFFF"
@@ -16,14 +17,21 @@ general {
         color_bad = "#FFAAAA"
 }
 
+order += "window_title_async"
 order += "disk /"
 order += "wireless _first_"
 order += "ethernet _first_"
+order += "whatismyip"
 order += "volume master"
 order += "arch_updates"
 # order += "load"
 order += "battery 0"
 order += "tztime local"
+
+window_title_async {
+        always_show = true
+        empty_title = "i3"
+}
 
 volume master {
         format = "%volume"
