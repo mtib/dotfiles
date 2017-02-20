@@ -1,5 +1,5 @@
-" author: mtib
 " file: .vimrc
+" author: mtib
 "
 " default vimrc to be used with neovim
 
@@ -100,6 +100,12 @@ set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
 " let g:ctrlp_user_command = 'find %s -type f'
 
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " HASKELL
 augroup ft_haskell
@@ -207,6 +213,7 @@ let g:syntastic_python_checkers = []
 let g:ycm_confirm_extra_conf = 0
 
 set guifont=mononoki\ 12
+hi Normal guibg=NONE ctermbg=NONE
 
 " experimental iabbrevs
 iabbrev taht that

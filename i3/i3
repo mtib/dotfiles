@@ -17,7 +17,7 @@ set $tbgd #1D1F21
 
 ## GENERAL I3 CONFIG
 # Font
-font pango:Terminus (TTF) 12
+font pango:Terminus (TTF) 11
 
 # req. for i3-gaps
 hide_edge_borders both
@@ -179,6 +179,7 @@ assign [class="discord"] workspace $ws9
 
 # window settings for specific apps
 for_window [class="Eom"] floating enable
+for_window [class="Mathdraw"] floating enable
 for_window [class="gnome-screenshot"] sticky enable
 
 ## I3 GAPS gaps
