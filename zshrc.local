@@ -31,7 +31,7 @@ alias i3d="i3-swallow -d"
 alias vzs="vim $HOME/.zshrc.local"
 alias vi3="vim $GITHUB/dotfiles/i3/i3"
 
-export VIMBG="256-grayvim" # default vim colorscheme
+export VIMBG="github" # default vim colorscheme
 
 function upd() {
     yaourt -Syyau --noconfirm # aur update

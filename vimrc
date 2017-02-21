@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'xolox/vim-misc'
 
 " Visual(-only) Plugins
-" Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/base16-vim'
 Plugin 'dikiaap/minimalist'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
@@ -202,7 +202,7 @@ let g:ctrlp_cmd = 'CtrlP'
 nnoremap <c-f> :CtrlPBuffer<cr>
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='minimalist'
+let g:airline_theme='base16'
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
 let g:syntastic_python_checkers = []
