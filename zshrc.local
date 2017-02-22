@@ -26,6 +26,10 @@ alias say="espeak -v german"
 alias ccat="highlight -O ansi"
 alias i3s="i3-swallow"
 alias i3d="i3-swallow -d"
+# using spotify-now-git and clyrics
+function singalong {
+    clyrics $(spotify-now -i "%title - %artist") | less
+}
 
 # vim shortcuts
 alias vzs="vim $HOME/.zshrc.local"

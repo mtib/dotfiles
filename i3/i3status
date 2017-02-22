@@ -17,7 +17,8 @@ general {
         color_bad = "#FFAAAA"
 }
 
-order += "window_title_async"
+# order += "window_title_async"
+order += "external_script"
 order += "disk /"
 order += "wireless _first_"
 order += "ethernet _first_"
@@ -27,6 +28,14 @@ order += "arch_updates"
 # order += "load"
 order += "battery 0"
 order += "tztime local"
+
+external_script {
+    cache_timeout = 3
+    color = "#1BD85E"
+    format = "{output}"
+    script_path = "$HOME/.spotify_current.sh"
+    on_click 1 = "exec qterminal -e 'zsh $HOME/.spotify_term_lyrics.sh'"
+}
 
 window_title_async {
         always_show = true

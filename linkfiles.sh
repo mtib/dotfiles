@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 l() {
 	ln -s $(pwd)/$1 $2
@@ -24,3 +24,10 @@ l rangerrc $HOME/.config/ranger/rc.conf
 # link nvim config to vim
 ln -s $HOME/.vim $HOME/.config/nvim
 ln -s $HOME/.vimrc $HOME/.vim/init.vim
+
+(
+    cd rando_scripts
+    for f in *; do
+        l $f $HOME/.$f
+    done
+)
