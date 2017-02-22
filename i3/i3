@@ -214,6 +214,7 @@ mode "starter" {
     bindsym g exec bash "$HOME/.screenlayout/game.sh"
     bindsym b exec bash "$HOME/.screenlayout/megabzl.sh"
     bindsym r exec bash "$HOME/.feh_update.sh"
+    bindsym s exec spotify-adkiller-dns-block
 
     bindsym o exec "bash $HOME/.screenlayout/megabzl.sh; sleep .2; bash $HOME/.screenlayout/mega.sh;bash $HOME/.feh_update"
 

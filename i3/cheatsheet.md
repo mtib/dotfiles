@@ -23,7 +23,7 @@
 | p     | Super         | pavucontrol       |               |                      |
 | r     |               |                   | feh update    | firefox (reddit)     |
 | r     | Super + Shift | restart           |               |                      |
-| s     |               |                   |               | mode starter         |
+| s     |               |                   | spotify       | mode starter         |
 | s     | Super         | mode starter      |               |                      |
 | t     | Super         | thunar            |               |                      |
 | u     | Super         | tmux              |               |                      |
