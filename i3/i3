@@ -74,7 +74,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -font 'xos4 terminus 32px' -
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
-bindsym $mod+b exec blueman-applet; exec blueman-manager
+bindsym $mod+b exec blueman-applet; sleep 5; exec blueman-manager
 bindsym $mod+m exec qterminal -e "$HOME/bin/ranger.sh"
 bindsym $mod+u exec qterminal -e tmux
 bindsym $mod+Shift+f fullscreen global
