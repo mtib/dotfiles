@@ -17,7 +17,7 @@ set $tbgd #1D1F21
 
 ## GENERAL I3 CONFIG
 # Font
-font pango:Terminus (TTF) 11
+font pango:Hasklig 9
 
 # req. for i3-gaps
 hide_edge_borders both
@@ -47,7 +47,7 @@ floating_modifier $mod
 ## ROFI CONFIG
 # window foreground & background
 set $rf #FFFFFF
-set $rb argb:AA000000
+set $rb argb:BB000000
 
 # highlight foreground & background
 set $rhlf #FFFFFF
@@ -70,7 +70,7 @@ set $rurb #DC322F
 ## KEYBINDS
 bindsym $mod+Return exec qterminal -e zsh
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font 'xos4 terminus 32px' -terminal qterminal -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Hasklig 32px' -terminal qterminal -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots

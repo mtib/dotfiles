@@ -39,7 +39,7 @@ while true; do
     esac
     if [ $1 = "now" ];
     then
-        exit
+        return;
     else
         sleep 5m
     fi

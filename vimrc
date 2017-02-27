@@ -68,6 +68,7 @@ set smartcase
 set lazyredraw
 set ttyfast
 set magic
+set mouse=a
 set showmatch " nohlsearch is bound to //
 set autoread
 set showcmd
@@ -157,14 +158,15 @@ augroup END
 noremap <C-n> :NERDTreeToggle<CR>
 
 " show trailing whitespace
-nnoremap t /\s\{1,}$<CR>
+nnoremap t :%s/\s\{1,}$//gc<CR>
+nnoremap <space> i<space><Esc>ea<space><Esc>
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
-
+let g:syntastic_quiet_messages = { "type": "style" }
 
 " make vim-go and syntastic like each other
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
@@ -183,7 +185,7 @@ nnoremap <F4> :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<cr>
 " vnoremap <F4> :execute "vimgrep /" . expand("
 
 " paste from clipboard
-inoremap <c-p> <Esc>"+p
+" inoremap <c-p> <Esc>"+p
 
 " emmet me this:
 inoremap <c-e> <Esc>:Emmet<space>

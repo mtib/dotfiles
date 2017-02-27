@@ -20,9 +20,8 @@ esac
 xautolock -time 30 -locker "i3lock-fancy -p -t ''" &
 
 (
-    sleep 10;
+    sleep 5;
     source $HOME/.screenlayout/mega.sh
-    sleep 10;
     source $HOME/.feh_update.sh
 ) &
 
