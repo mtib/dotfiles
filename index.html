@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta charset="utf-8">
+    </head>
+    <body onload="cstart()">
+        <style>
+            body {
+                color: #F0F0F0;
+                font-family: "Hasklig";
+                text-align: center;
+                background-color: #3B3D47;
+            }
+            table {
+                margin: auto auto;
+                table-layout: fixed;
+                border-radius: 1em;
+                border: 1px solid black;
+                background-color: #2D2E33;
+                max-width: 90%;
+                width: 80%;
+            }
+            tr {
+                text-align: center;
+            }
+            th {
+                text-align: center;
+                font-size: 18pt;
+                padding: .5em 1em;
+                color: #F0F0F0;
+                font-weight: 700;
+            }
+            #bgcanvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -100;
+            }
+            .filled {
+                font-size: 18pt;
+                text-align: center;
+                padding: .5em 1em;
+                color: #555555;
+                background-color: #DDDDDD;
+                transition: color .2s, background-color .2s;
+            }
+            .filled:hover {
+                color: white;
+                background-color: #FF0000;
+            }
+            a, a:visited {
+                text-decoration: none;
+                color: inherit;
+                transition: color .2s;
+            }
+            u {
+                text-decoration: none;
+                color: #AA0811;
+            }
+
+
+        </style>
+        <h1>Start Page</h1>
+        <table id="output"></table>
+        <script>
+let shorts = {};
+document.addEventListener("keypress", function(ev) {
+    if ( shorts[ev.key] != null ) {
+        ev.preventDefault();
+        window.location = shorts[ev.key];
+    } else {
+        console.log(ev.key + " is not a shortcut");
+    }
+});
+let tab = document.getElementById("output");
+function tds(name, link, shortcut="") {
+    let td = document.createElement("td");
+    let spos = name.indexOf(shortcut);
+    if ( shortcut != "" ) {
+        shorts[shortcut] = link;
+    }
+    td.className = "filled";
+    let a = document.createElement("a");
+    a.innerHTML = name.substr(0,spos) + "<u>" + shortcut + "</u>" + name.slice(spos + shortcut.length);
+    a.href = link;
+    td.appendChild(a);
+    return td;
+}
+
+let data = {
+    "Entertainment": [
+        tds("youtube", "https://youtube.com", "y"),
+        tds("reddit", "https://reddit.com", "r"),
+        tds("whatsapp", "https://web.whatsapp.com", "w")
+    ],
+    "Coding": [
+        tds("github", "https://github.com", "g"),
+        tds("gitea", "http://hafen.viwetter.de:3000", "i"),
+        tds("gists", "https://gist.github.com/mtib", "s")
+    ],
+    "Tu-Bs": [
+        tds("prog1", "https://www.tu-braunschweig.de/ips/teaching/ws16-17/prog1")
+    ]
+};
+
+let maximum = 0;
+for ( let header in data ) {
+    if ( maximum < data[header].length ) {
+        maximum = data[header].length;
+    }
+}
+
+rows = {};
+
+for ( let i = -1; i < maximum; i++ ) {
+    rows[i] = document.createElement("tr");
+    tab.appendChild(rows[i]);
+}
+
+for ( let header in data ) {
+    let th = document.createElement("th");
+    th.appendChild(document.createTextNode(header));
+    rows[-1].appendChild(th)
+        for ( let index = 0; index < maximum; index++ ) {
+            if ( index in data[header] ) {
+                rows[index].appendChild(data[header][index])
+            } else {
+                rows[index].appendChild(document.createElement("td"));
+            }
+        }
+}
+let last = document.createElement("tr");
+tab.appendChild(last);
+last.appendChild(document.createTextNode("<<EOL"));
+        </script>
+        <!-- <canvas id="bgcanvas"></canvas> -->
+        <script>
+let gl;
+function cstart() {
+    let canv = document.getElementById("bgcanvas");
+    gl = canv.getContext("webgl");
+    if (gl) {
+        //requestAnimationFrame(redraw);
+    }
+}
+
+function redraw() {
+    gl.clearColor(1.0,1.0,1.0,1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+
+
+
+    requestAnimationFrame(redraw);
+}
+        </script>
+    </body>
+</html>

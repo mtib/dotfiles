@@ -32,7 +32,9 @@ xautolock -time 30 -locker "i3lock-fancy -p -t ''" &
         source $HOME/.feh_update.sh &
     fi
     echo "xfce" >> $loger;
-    /usr/lib64/xfce4/notifyd/xfce4-notifyd
+    while true; do
+        /usr/lib64/xfce4/notifyd/xfce4-notifyd
+    done
 )&
 
 # remember to start illum-d via cron if

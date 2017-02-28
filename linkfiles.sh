@@ -22,8 +22,10 @@ l tmux.conf $HOME/.tmux.conf
 mkdir -p $HOME/.config/ranger
 l rangerrc $HOME/.config/ranger/rc.conf
 # link nvim config to vim
+l scrot.sh $HOME/.scrot.sh
 ln -s $HOME/.vim $HOME/.config/nvim
 ln -s $HOME/.vimrc $HOME/.vim/init.vim
+
 
 (
     cd rando_scripts

@@ -185,7 +185,8 @@ nnoremap <F4> :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<cr>
 " vnoremap <F4> :execute "vimgrep /" . expand("
 
 " paste from clipboard
-" inoremap <c-p> <Esc>"+p
+inoremap <c-p> <Esc>"+p
+vnoremap <c-v> "+y
 
 " emmet me this:
 inoremap <c-e> <Esc>:Emmet<space>

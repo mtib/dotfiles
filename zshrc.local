@@ -27,6 +27,7 @@ alias say="espeak -v german"
 alias ccat="highlight -O ansi"
 alias i3s="i3-swallow"
 alias i3d="i3-swallow -d"
+alias host="python3 -m http.server 9000"
 # using spotify-now-git and clyrics
 function singalong {
     singhere | less
