@@ -25,6 +25,7 @@
 | r     | Super + Shift | restart           |               |                      |
 | s     |               |                   | spotify       | mode starter         |
 | s     | Super         | mode starter      |               |                      |
+| t     |               |                   | bar toggle    |                      |
 | t     | Super         | thunar            |               |                      |
 | u     | Super         | tmux              |               |                      |
 | v     | Super + Shift | vim               |               |                      |
