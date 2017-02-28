@@ -20,10 +20,20 @@ esac
 xautolock -time 30 -locker "i3lock-fancy -p -t ''" &
 
 (
-    sleep 5;
-    source $HOME/.screenlayout/mega.sh
-    source $HOME/.feh_update.sh
-) &
+    loger=".xlog";
+    sleep 1;
+    if [[ -f $HOME/.screenlayout/mega.sh ]]; then
+        echo "mega" > $loger;
+        source $HOME/.screenlayout/mega.sh;
+    fi
+    sleep 1;
+    if [[ -f $HOME/.feh_update.sh ]]; then
+        echo "feh" >> $loger;
+        source $HOME/.feh_update.sh &
+    fi
+    echo "xfce" >> $loger;
+    /usr/lib64/xfce4/notifyd/xfce4-notifyd
+)&
 
 # remember to start illum-d via cron if
 # your graphics driver doesn't support the fn-keys

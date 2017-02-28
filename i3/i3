@@ -74,7 +74,7 @@ bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Hasklig 32px' -termin
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
-bindsym $mod+b exec blueman-applet; sleep 5; exec blueman-manager
+bindsym $mod+b exec "blueman-applet; sleep 5; blueman-manager"
 bindsym $mod+m exec qterminal -e "$HOME/bin/ranger.sh"
 bindsym $mod+u exec qterminal -e tmux
 bindsym $mod+Shift+f fullscreen global
@@ -82,7 +82,7 @@ bindsym $mod+g exec gcolor2
 bindsym $mod+t exec thunar
 bindsym $mod+p exec pavucontrol
 bindsym $mod+x exec gnome-screenshot -i
-bindcode 107 exec gnome-screenshot -i
+bindcode 107 exec "zsh $HOME/.scrot.sh"
 #bindsym $mod+Shift+a exec atom -n
 bindsym $mod+l exec "i3lock-fancy -p -t ''"
 bindcode 78 exec "i3lock-fancy -p -t ''"
@@ -213,10 +213,10 @@ mode "starter" {
     bindsym l exec bash "$HOME/.screenlayout/mega.sh"
     bindsym g exec bash "$HOME/.screenlayout/game.sh"
     bindsym b exec bash "$HOME/.screenlayout/megabzl.sh"
-    bindsym r exec bash "$HOME/.feh_update.sh"
+    bindsym r exec bash "$HOME/.feh_update.sh now"
     bindsym s exec spotify-adkiller-dns-block
 
-    bindsym o exec "bash $HOME/.screenlayout/megabzl.sh; sleep .2; bash $HOME/.screenlayout/mega.sh;bash $HOME/.feh_update"
+    # bindsym o exec "bash $HOME/.screenlayout/megabzl.sh; sleep .2; bash $HOME/.screenlayout/mega.sh;bash $HOME/.feh_update"
 
     bindsym y exec zsh "$HOME/.ytd.sh"
 
