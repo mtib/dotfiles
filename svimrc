@@ -1,51 +1,76 @@
+" file: .vimrc
+" author: mtib
+"
+" default vimrc to be used with neovim
+
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" Update Vundle with Vundle
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'xolox/vim-misc'
 
+" Visual(-only) Plugins
 Plugin 'chriskempson/base16-vim'
-" Plugin 'flazz/vim-colorschemes'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'airblade/vim-gitgutter'
+Plugin 'dikiaap/minimalist'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
+Plugin 'felixhummel/setcolors.vim'
 
+" File Openers
 Plugin 'scrooloose/nerdtree'
-" Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" Auto Complete
 Plugin 'scrooloose/syntastic'
 Plugin 'valloric/youcompleteme'
 Plugin 'artur-shaik/vim-javacomplete2'
-Plugin 'mattn/emmet-vim'
 Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'klen/python-mode'
-Plugin 'fatih/vim-go'
-" Plugin 'Shougo/vimproc.vim'
-" Plugin 'eagletmt/neco-ghc'
-" Plugin 'eagletmt/ghcmod-vim'
-" Plugin 'alx741/ghc.vim'
 
+" Language Support
+Plugin 'leafgarland/typescript-vim'
+Plugin 'mattn/emmet-vim'
+" Plugin 'klen/python-mode'
+Plugin 'fatih/vim-go'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'alx741/ghc.vim'
+
+" tpope
 Plugin 'tpope/vim-commentary'
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat.git'
 Plugin 'tpope/vim-surround'
 
+" Web Integration
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
+
+" Aligner
+Plugin 'junegunn/vim-easy-align'
 call vundle#end()
 
 filetype plugin on
 filetype indent on
-" set ruler
-" set wrap
-" set cmdheight=1
-" set ignorecase
+let mapleader=","
+set ruler
+set wrap
+set cmdheight=1
+set ignorecase
 set smartcase
 set lazyredraw
 set ttyfast
-" set magic
-set showmatch
+set magic
+set mouse=a
+set showmatch " nohlsearch is bound to //
 set autoread
 set showcmd
 
@@ -62,14 +87,27 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" set lbr
+" linebreak
+set lbr
+" indentation:
 set ai
 set si
 
 set relativenumber
 set laststatus=2
-set termguicolors
-colorscheme base16-bright
+" set termguicolors
+colorscheme github
+
+set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
+" let g:ctrlp_user_command = 'find %s -type f'
+
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " HASKELL
 augroup ft_haskell
@@ -78,44 +116,58 @@ augroup ft_haskell
     autocmd FileType haskell compiler ghc
     let g:ycm_semantic_triggers = {'haskell' : ['.']}
     autocmd FileType haskell call SetHaskellKeymap()
+    function! SetHaskellKeymap()
+        inoreab <buffer> int Int
+        inoreab <buffer> integer Integer
+        inoreab <buffer> string String
+        inoreab <buffer> double Double
+        inoreab <buffer> float Float
+        inoreab <buffer> true True
+        inoreab <buffer> false False
+        inoreab <buffer> maybe Maybe
+        inoreab <buffer> just Just
+        inoreab <buffer> nothing Nothing
+        inoreab <buffer> io IO ()
+    endfunction
 augroup END
 
-function SetHaskellKeymap()
-    inoreab <buffer> int Int
-    inoreab <buffer> integer Integer
-    inoreab <buffer> string String
-    inoreab <buffer> double Double
-    inoreab <buffer> float Float
-    inoreab <buffer> true True
-    inoreab <buffer> false False
-    inoreab <buffer> maybe Maybe
-    inoreab <buffer> just Just
-    inoreab <buffer> nothing Nothing
-    inoreab <buffer> io IO ()
-endfunction
 
 " JAVA
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
+augroup ft_java
+    autocmd!
+    autocmd FileType java setlocal omnifunc=javacomplete#Complete
+    let g:syntastic_java_checkers=['javac', 'checkstyle']
+    let g:syntastic_java_checkstyle_classpath="~/bin/checkstyle-java/checkstyle-7.2-all.jar"
+    let g:syntastic_java_checkstyle_conf_file="~/bin/checkstyle-java/checkstyle-7.2.xml"
+    autocmd FileType java call SetJavaKeymap()
+    function! SetJavaKeymap()
+        nnoremap <F1> :te jcheck % \| less<CR>
+        nnoremap <F2> :te javac % && java %:r<CR>
+    endfunction
+augroup END
+
+augroup ft_arduino
+    autocmd!
+    autocmd BufNewFile,BufRead *.ino call SetArduinoKeymap()
+    function! SetArduinoKeymap()
+        nnoremap ,u :!make upload<CR>
+        " nnoremap ,m :!bash -c "make monitor"<CR>
+    endfunction
+augroup END
 
 " NERDTree
 noremap <C-n> :NERDTreeToggle<CR>
-nnoremap t /\s\{1,}$<CR>
+
+" show trailing whitespace
+nnoremap t :%s/\s\{1,}$//gc<CR>
+nnoremap <space> i<space><Esc>ea<space><Esc>
 
 " Syntastic
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
-
-" Java Setup
-let g:syntastic_java_checkers=['javac', 'checkstyle']
-let g:syntastic_java_checkstyle_classpath="~/bin/checkstyle-java/checkstyle-7.2-all.jar"
-let g:syntastic_java_checkstyle_conf_file="~/bin/checkstyle-java/checkstyle-7.2.xml"
-autocmd FileType java call SetJavaKeymap()
-function SetJavaKeymap()
-    nnoremap <F1> :te jcheck % \| less<CR>
-    nnoremap <F2> :te javac % && java %:r<CR>
-endfunction
+let g:syntastic_quiet_messages = { "type": "style" }
 
 " make vim-go and syntastic like each other
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
@@ -129,6 +181,17 @@ inoremap <up> <Esc>:m .-2<CR>==gi
 vnoremap <down> :m '>+1<CR>gv=gv
 vnoremap <up> :m '<-2<CR>gv=gv
 
+" easy search
+nnoremap <F4> :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<cr>
+" vnoremap <F4> :execute "vimgrep /" . expand("
+
+" paste from clipboard
+inoremap <c-p> <Esc>"+p
+vnoremap <c-v> "+y
+
+" emmet me this:
+inoremap <c-e> <Esc>:Emmet<space>
+
 " easy save
 nnoremap ,, :w<CR>
 nnoremap // :nohlsearch<CR>
@@ -140,12 +203,21 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+nnoremap <c-f> :CtrlPBuffer<cr>
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='zenburn'
+let g:airline_theme='base16'
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
+let g:syntastic_python_checkers = []
+" let g:pymode_python = 'python3'
+" let g:pymode_lint_checkers = []
+" let g:pymode_warnings = 0
+" let g:pymode_folding = 0
 let g:ycm_confirm_extra_conf = 0
+
+set guifont=mononoki\ 12
+" hi Normal guibg=NONE ctermbg=NONE
 
 " experimental iabbrevs
 iabbrev taht that

@@ -28,9 +28,16 @@ alias ccat="highlight -O ansi"
 alias i3s="i3-swallow"
 alias i3d="i3-swallow -d"
 alias host="python3 -m http.server 9000"
+alias setxkb-de="setxkbmap de -variant nodeadkeys"
+alias setxkb-gb="setxkbmap gb"
+
 # using spotify-now-git and clyrics
 function singalong {
     singhere | less
+}
+
+function rec {
+    asciinema rec $1 -w 0.2
 }
 
 function singhere {

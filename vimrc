@@ -34,6 +34,7 @@ Plugin 'artur-shaik/vim-javacomplete2'
 Plugin 'shawncplus/phpcomplete.vim'
 
 " Language Support
+Plugin 'leafgarland/typescript-vim'
 Plugin 'mattn/emmet-vim'
 " Plugin 'klen/python-mode'
 Plugin 'fatih/vim-go'
