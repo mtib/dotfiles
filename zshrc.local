@@ -40,6 +40,10 @@ function rec {
     asciinema rec $1 -w 0.2
 }
 
+function yhs {
+    # set in .keys
+    ssh $HSLOGIN -NCL localhost:7009:localhost:7009
+}
 function singhere {
     clyrics $(spotify-now -i "%title - %artist")
 }
@@ -50,9 +54,70 @@ alias vi3="vim $GITHUB/dotfiles/i3/i3"
 
 export VIMBG="github" # default vim colorscheme
 
+## UPD ROUTINE ##
+# used to update the system
+# may require user / manual correspondence
+# authorization using sudo of current user
+# supposed to be run regularly
+# CONSTANTS:
+HEART=${HEART:-"your Sweetheart"} # set in .keys
+PRONOUN=${PRONOUN:-"he/she"}      # set in .keys
+ADJECTIVES=(
+    "awesome" "cool" "pretty"
+    "amazing" "gorgeous" "lovely"
+    "beautiful" "great" "nice"
+    "adorable" "bright" "charming"
+    "creative" "determined" "funny"
+    "friendly" "hard-working" "honest"
+    "helpful" "humorous" "intellectual"
+    "intuitive" "intelligent" "inventive"
+    "kind" "patient" "polite"
+    "quick-witted" "rational" "reliable"
+    "resourceful" "romantic" "sensible"
+    "sincere" "sympathetic" "thoughtful"
+    "understanding" "warmhearted" "witty"
+    "attractive" "breathtaking" "cheerful"
+    "cute" "dear" "delightful"
+    "deserving" "enchanting" "exceptional"
+    "extraordinary" "friendly" "gifted"
+    "genius" "gracious" "prima"
+    "heavenly" "incredible" "inspiring"
+    "impressive" "insightful" "inventive"
+    "knowledgeable" "marvelous" "motivating"
+    "noble" "outstanding" "patient"
+    "quirky" "responsible" "sweet"
+    "stunning" "reliable" "special"
+    "smart" "thrilling" "trustworthy"
+    "unselfish" "uplifting" "wise"
+    "wonderful" "youthful" "clever"
+    "encouraging" "graceful" "enjoyable"
+    "spectacular" "splendid" "precious"
+) # TODO more adjectives
+
+# returns random adjective
+# funniness of $RANDOM dealt with by upd()
+function nadj() {
+    let NUM=$[$RANDOM % ${#ADJECTIVES} + 1]
+    echo $ADJECTIVES[$NUM]
+}
+
+# select a random adjective from $ADJECTIVES
+# tell the user to tell $HEART that $PRONOUN is that adjective
+# make them wait >:D but only one second for now
+# then do updates via yaourt with Syyau
 function upd() {
+    TADJ=$RANDOM # would be cached otherwise
+    TADJ=$(nadj)
+    echo "\e[34;1m::\e[0;1m \e[1mHave you told \e[31;1m${HEART}\e[0;1m that ${PRONOUN}'s \e[31;1m${TADJ}\e[0;1m today?\e[0m"
+    echo " 1. if not \e[1mtell her\e[0m"
+    echo " 2. enter your password"
+    echo " 3. have some updates ^.^"
+    echo " 4. be awesome yourself"
+    sleep 1
+    echo "\e[34;1m::\e[0;1m \e[1mAuthorization... (sudo)\e[0m"
     yaourt -Syyau --noconfirm # aur update
 }
+## UPD END ##
 
 export YTDIR="$HOME/Desktop/Youtube"
 function ytd() {
