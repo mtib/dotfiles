@@ -44,6 +44,11 @@ function yhs {
     # set in .keys
     ssh $HSLOGIN -NCL localhost:7009:localhost:7009
 }
+
+function forward {
+    ssh -L localhost:${1}:localhost:${1} $2
+}
+
 function singhere {
     clyrics $(spotify-now -i "%title - %artist")
 }
