@@ -174,6 +174,8 @@ let g:syntastic_quiet_messages = { "type": "style" }
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
+let $CLASSPATH="./Lib.jar:."
+
 " moving lines
 nnoremap <down> :m .+1<CR>==
 nnoremap <up> :m .-2<CR>==
