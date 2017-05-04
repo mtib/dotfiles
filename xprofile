@@ -22,6 +22,7 @@ xautolock -time 30 -locker "i3lock-fancy -p -t ''" &
 (
     loger=".xlog";
     sleep 1;
+    thunar --daemon &
     if [[ -f $HOME/.screenlayout/mega.sh ]]; then
         echo "mega" > $loger;
         source $HOME/.screenlayout/mega.sh;

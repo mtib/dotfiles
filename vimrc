@@ -6,6 +6,7 @@
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf
 call vundle#begin()
 " Update Vundle with Vundle
 Plugin 'VundleVim/Vundle.vim'
@@ -104,10 +105,10 @@ set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xnoremap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
 
 " HASKELL
 augroup ft_haskell
@@ -181,6 +182,9 @@ inoremap <up> <Esc>:m .-2<CR>==gi
 vnoremap <down> :m '>+1<CR>gv=gv
 vnoremap <up> :m '<-2<CR>gv=gv
 
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 " easy search
 nnoremap <F4> :execute "vimgrep /" . expand("<cword>") . "/gj **" <Bar> cw<cr>
 " vnoremap <F4> :execute "vimgrep /" . expand("
@@ -220,6 +224,7 @@ set guifont=mononoki\ 12
 hi Normal guibg=NONE ctermbg=NONE
 
 " experimental iabbrevs
+iabbrev @@ markus@tibyte.net
 iabbrev taht that
 iabbrev widht width
 iabbrev heigth height
