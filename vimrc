@@ -137,9 +137,10 @@ augroup END
 augroup ft_java
     autocmd!
     autocmd FileType java setlocal omnifunc=javacomplete#Complete
+    " java -jar checkstyle-7.6.1-jar -c tubs_checks.xml Test.java
     let g:syntastic_java_checkers=['javac', 'checkstyle']
-    let g:syntastic_java_checkstyle_classpath="~/bin/checkstyle-java/checkstyle-7.2-all.jar"
-    let g:syntastic_java_checkstyle_conf_file="~/bin/checkstyle-java/checkstyle-7.2.xml"
+    let g:syntastic_java_checkstyle_classpath="~/bin/checkstyle-java/checkstyle-7.6.1-tubs.jar"
+    let g:syntastic_java_checkstyle_conf_file="~/bin/checkstyle-java/tubs_checks.xml"
     autocmd FileType java call SetJavaKeymap()
     function! SetJavaKeymap()
         nnoremap <F1> :te jcheck % \| less<CR>

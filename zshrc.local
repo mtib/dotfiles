@@ -53,6 +53,14 @@ function singhere {
     clyrics $(spotify-now -i "%title - %artist")
 }
 
+CHECKSTYLE="$HOME/bin/checkstyle-java/checkstyle-7.6.1-tubs.jar"
+CHECKSTYLECONF="$HOME/bin/checkstyle-java/tubs_checks.xml"
+
+function jcheck {
+    java -jar $CHECKSTYLE -c $CHECKSTYLECONF $1 ||\
+    java -jar $CHECKSTYLE -c $CHECKSTYLECONF $1.java
+}
+
 # vim shortcuts
 alias vzs="vim $HOME/.zshrc.local"
 alias vi3="vim $GITHUB/dotfiles/i3/i3"
