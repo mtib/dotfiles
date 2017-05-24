@@ -1,0 +1,2 @@
+#!/bin/bash
+qterminal -e "gvim.qterm.sh '$1'"

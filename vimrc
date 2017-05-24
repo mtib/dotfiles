@@ -143,8 +143,8 @@ augroup ft_java
     let g:syntastic_java_checkstyle_conf_file="~/bin/checkstyle-java/tubs_checks.xml"
     autocmd FileType java call SetJavaKeymap()
     function! SetJavaKeymap()
-        nnoremap <F1> :te jcheck % \| less<CR>
-        nnoremap <F2> :te javac % && java %:r<CR>
+        nnoremap <F1> :!jcheck %<CR>
+        nnoremap <F2> :!javac % && java %:r<CR>
     endfunction
 augroup END
 
