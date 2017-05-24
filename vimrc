@@ -105,10 +105,12 @@ set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
 au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xnoremap ga <Plug>(EasyAlign)
+" xnoremap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nnoremap ga <Plug>(EasyAlign)
+" nnoremap ga <Plug>(EasyAlign)
+
+nnoremap ;; :normal! mqA;<esc>`q
 
 " HASKELL
 augroup ft_haskell
@@ -132,6 +134,15 @@ augroup ft_haskell
     endfunction
 augroup END
 
+" GOLANG
+augroup ft_golang
+    autocmd!
+    autocmd FileType go call SetGolangKeymap()
+    function! SetGolangKeymap()
+        " onoremap if ?^func<cr>$v/^}<cr>
+        " onoremap io ?func<cr>v/}\(<cr>
+    endfunction
+augroup end
 
 " JAVA
 augroup ft_java
