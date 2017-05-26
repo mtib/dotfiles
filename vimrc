@@ -7,6 +7,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~/.fzf
+
 call vundle#begin()
 " Update Vundle with Vundle
 Plugin 'VundleVim/Vundle.vim'
@@ -96,8 +97,8 @@ set si
 
 set relativenumber
 set laststatus=2
-" set termguicolors
-colorscheme $VIMBG
+set notermguicolors
+colorscheme default
 
 set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
 " let g:ctrlp_user_command = 'find %s -type f'
@@ -224,7 +225,7 @@ let g:ctrlp_cmd = 'CtrlP'
 nnoremap <c-f> :CtrlPBuffer<cr>
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16'
+let g:airline_theme='base16_grayscale'
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
 let g:syntastic_python_checkers = []
@@ -235,7 +236,8 @@ let g:syntastic_python_checkers = []
 let g:ycm_confirm_extra_conf = 0
 
 set guifont=mononoki\ 12
-hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
+
 
 " experimental iabbrevs
 iabbrev @@ markus@tibyte.net
