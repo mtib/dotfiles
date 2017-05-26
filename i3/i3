@@ -2,9 +2,9 @@ set $mod Mod4
 
 # TODO remove unused
 #highlights
-set $c1 #FFFFFF
+set $c1 #5294E2
 #dark highlights
-set $cb #FFFFFF
+set $cb #5294E2
 #unfocus-titlebar
 set $tb #000000
 
@@ -27,17 +27,17 @@ new_float normal
 ## WINDOW COLORS
 # TODO colors neeed some tweaking
 # active window
-set $aw #FFFFFF
+set $aw #5294E2
 # active window (unfocused)
-set $awu #DDDDDD
+set $awu #2F343F
 # inactive window
-set $iw #AAAAAA
+set $iw #404552
 
 # TODO organize colors more nicely
 #class                  border  backgr. text    indicator child_border
-client.focused          $aw     $aw     #000000 $cb       $c1
-client.focused_inactive $awu    $awu    #000000 $cb       $tb
-client.unfocused        $iw     $iw     #000000 $cb       $tb
+client.focused          $aw     $aw     #FFFFFF $cb       $c1
+client.focused_inactive $awu    $awu    #BBBBBB $cb       $tb
+client.unfocused        $iw     $iw     #888888 $cb       $tb
 client.urgent           #990000 #ffffff #000000 #990000   #990000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
@@ -186,7 +186,7 @@ for_window [class="Mathdraw"] floating enable
 for_window [class="gnome-screenshot"] sticky enable
 
 ## I3 GAPS gaps
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 6
 gaps outer 2
 

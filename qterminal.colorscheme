@@ -1,10 +1,10 @@
 # --- special colors ---
 
 [Background]
-Color=64,69,82
+Color=56,60,74
 
 [BackgroundIntense]
-Color=64,69,82
+Color=56,60,74
 
 [Foreground]
 Color=223,224,224
@@ -43,7 +43,7 @@ Color=240,198,116
 Color=85,94,217
 
 [Color4Intense]
-Color=137,190,255
+Color=89,164,255
 
 [Color5]
 Color=82,141,255
