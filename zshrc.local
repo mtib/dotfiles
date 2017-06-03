@@ -253,7 +253,7 @@ function setbg {
     function tell {
         echo "copying \e[32m$1\e[0m to \e[32m$2\e[0m"
         rm $2
-        convert $1 $2
+        convert $1 -resize 1920x1080\! $2
     }
     case $2 in
         "night")
