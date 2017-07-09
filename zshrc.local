@@ -14,7 +14,7 @@ export GOPATH="$HOME/go"
 export GITHUB="$HOME/github"
 export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 export EDITOR="/usr/bin/vim" # default to vim
-export TERM="xterm-256color" # enable 256 colors
+# export TERM="xterm-256color" # enable 256 colors
 export VISUAL="/usr/bin/vim" # unsure if working..
 export K4="3840x2160"        # sum screen resolution
 
@@ -22,6 +22,7 @@ alias diff="git diff"
 alias du="du -h"
 alias l="ls -lh"
 alias la="ls -Alh"
+alias lc="colorls"
 alias svim="vim -u ~/.svimrc" # minimal version of vim
 alias vmi="vim" # default to vim
 alias vopen="vim \$(fzf)"
@@ -46,6 +47,10 @@ function singalong {
 
 function rec {
     asciinema rec $1 -w 0.2
+}
+
+function ytdm {
+    youtube-dl -x --audio-format mp3 -o '%(title)s.%(ext)s' "$1"
 }
 
 function yhs {
@@ -122,6 +127,20 @@ function nadj() {
     echo $ADJECTIVES[$NUM]
 }
 
+function decline() {
+    case $1 in
+        "he")
+            echo "him"
+            ;;
+        "she")
+            echo "her"
+            ;;
+        "they")
+            echo "them"
+            ;;
+    esac
+}
+
 # select a random adjective from $ADJECTIVES
 # tell the user to tell $HEART that $PRONOUN is that adjective
 # make them wait >:D but only one second for now
@@ -130,7 +149,7 @@ function upd() {
     TADJ=$RANDOM # would be cached otherwise
     TADJ=$(nadj)
     echo "\e[34;1m::\e[0;1m \e[1mHave you told \e[31;1m${HEART}\e[0;1m that ${PRONOUN}'s \e[31;1m${TADJ}\e[0;1m today?\e[0m"
-    echo " 1. if not \e[1mtell her\e[0m"
+    echo " 1. if not \e[1mtell $(decline ${PRONOUN})\e[0m"
     echo " 2. enter your password"
     echo " 3. have some updates ^.^"
     echo " 4. be awesome yourself"
@@ -274,11 +293,16 @@ function setbg {
         *)
             echo "you need to specify at which time to"
             echo "show the wallpaper:"
-            echo "\e[37m{night, morning, midday, afternoon, evening}\e[0m"
+            echo "\e[37m{morning, midday, afternoon, evening, night}\e[0m"
             echo "you can use '\e[37mwallpaper file resolution output\e[0m'"
             echo "to get the file in the correct resolution"
     esac
     convert $TBG_MORNING $TBG_MIDDAY $TBG_AFTERNOON $TBG_EVENING $TBG_NIGHT +append $HOME/.bg.preview.jpg
+}
+
+function previewbg {
+    echo "order: [morning, midday, afternoon, evening, night]"
+    eom ~/.bg.preview.jpg &
 }
 
 # note taking function

@@ -9,7 +9,7 @@
 general {
         output_format = "i3bar"
         colors = true
-        interval = 10
+        interval = 3
         color = "#FFFFFF"
         color_good = "#AAFFAA"
         color_degraded = "#AAAAAA"
@@ -19,9 +19,19 @@ general {
 order += "frame default"
 
 frame default {
+
+    cmus {
+        cache_timeout = 2
+        color = "#C8A1FF"
+        format_none = ""
+        state_pause = "|"
+        state_play = ">"
+        state_stop = "."
+    }
+
     # format_separator = " <> "
     external_script spotify {
-        cache_timeout = 3
+        cache_timeout = 2
         color = "#1BD85E"
         format = "{output}"
         script_path = "$HOME/.spotify_current.sh"

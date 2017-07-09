@@ -14,6 +14,7 @@ l feh_constants.sh $HOME/.feh_constants.sh
 l gitignore $HOME/.gitignore
 mkdir -p $HOME/.config/i3{,status}
 l i3/i3 $HOME/.config/i3/config
+mkdir -p $HOME/.i3/py3status
 l i3/i3status $HOME/.config/i3status/config
 l zshrc.local $HOME/.zshrc.local
 mkdir -p $HOME/.vifm

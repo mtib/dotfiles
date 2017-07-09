@@ -38,6 +38,7 @@ echo "sudo access to install i3 scripts: "
 sudo mkdir -p /usr/share/i3scripts
 sudo cp louder.sh /usr/share/i3scripts/louder.sh
 sudo cp quieter.sh /usr/share/i3scripts/quieter.sh
+wget -O $HOME/.i3/py3status/cmus.py https://raw.githubusercontent.com/raspbeguy/py3status-cmus/6cc20b6adb417e6b6c147c004943a9a0355ec2b9/cmus.py
 echo "done"
 
 read -p "create new ssh key (y/n)?" choice

@@ -1,2 +1,2 @@
 #!/bin/bash
-cp {,/etc/share/X11/xkb/symbols/}gb
+cp {,/usr/share/X11/xkb/symbols/}gb

@@ -97,8 +97,9 @@ set si
 
 set relativenumber
 set laststatus=2
-set notermguicolors
-colorscheme default
+" set notermguicolors
+" colorscheme PaperColor
+colorscheme revolutions
 
 set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
 " let g:ctrlp_user_command = 'find %s -type f'
@@ -225,7 +226,7 @@ let g:ctrlp_cmd = 'CtrlP'
 nnoremap <c-f> :CtrlPBuffer<cr>
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='murmur'
+let g:airline_theme='minimalist'
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_compile.py'
 let g:syntastic_python_checkers = []
@@ -235,7 +236,7 @@ let g:syntastic_python_checkers = []
 " let g:pymode_folding = 0
 let g:ycm_confirm_extra_conf = 0
 
-set guifont=mononoki\ 12
+" set guifont=mononoki\ 12
 "hi Normal guibg=NONE ctermbg=NONE
 
 

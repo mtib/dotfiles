@@ -68,15 +68,15 @@ set $rurf #FFFFFF
 set $rurb #DC322F
 
 ## KEYBINDS
-bindsym $mod+Return exec qterminal -e zsh
+bindsym $mod+Return exec xterm -e zsh
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Hasklig 32px' -terminal qterminal -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Hurmit Nerd Font 32px' -terminal xterm -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
 bindsym $mod+b exec "blueman-applet; sleep 5; blueman-manager"
-bindsym $mod+m exec qterminal -e "$HOME/bin/ranger.sh"
-bindsym $mod+u exec qterminal -e tmux
+bindsym $mod+m exec xterm -e "$HOME/bin/ranger.sh"
+bindsym $mod+u exec xterm -e tmux
 bindsym $mod+Shift+f fullscreen global
 bindsym $mod+g exec gcolor2
 bindsym $mod+t exec thunar
@@ -86,7 +86,7 @@ bindcode 107 exec "zsh $HOME/.scrot.sh"
 #bindsym $mod+Shift+a exec atom -n
 bindsym $mod+l exec "i3lock-fancy -p -t ''"
 bindcode 78 exec "i3lock-fancy -p -t ''"
-bindsym $mod+Shift+v exec VIMBG="Tomorrow-Night-Eighties" qterminal -e vim
+bindsym $mod+Shift+v exec VIMBG="Tomorrow-Night-Eighties" xterm -e vim
 
 # moving between workspaces
 bindcode $mod+Shift+59 move workspace to output left
@@ -128,6 +128,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute s
 
 # Screen brightness controls via illum-d (maybe)
 # ...
+bindsym XF86Sleep exec systemctl suspend
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
@@ -215,9 +216,11 @@ mode "starter" {
     # TODO single character starting apps
     bindsym l exec bash "$HOME/.screenlayout/mega.sh"
     bindsym g exec bash "$HOME/.screenlayout/game.sh"
+    bindsym d exec bash "$HOME/.screenlayout/dual.sh"
     bindsym b exec bash "$HOME/.screenlayout/megabzl.sh"
+    bindsym c exec xterm -e cmus
     bindsym r exec bash "$HOME/.feh_update.sh now"
-    bindsym u exec urxvt -b 10 -e cava
+    bindsym u exec xterm -b 10 -e cava
     bindsym s exec spotify-adkiller-dns-block
     bindsym t bar mode toggle
 
