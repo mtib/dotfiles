@@ -137,24 +137,15 @@ augroup ft_haskell
     endfunction
 augroup END
 
-" GOLANG
 augroup ft_golang
     autocmd!
-    autocmd FileType go call SetGolangKeymap()
-    function! SetGolangKeymap()
-        " onoremap if ?^func<cr>$v/^}<cr>
-        " onoremap io ?func<cr>v/}\(<cr>
-    endfunction
 augroup end
 
-" JAVA
 augroup ft_java
     autocmd!
-    autocmd FileType java setlocal omnifunc=javacomplete#Complete
-    " java -jar checkstyle-7.6.1-jar -c tubs_checks.xml Test.java
     let g:syntastic_java_checkers=['javac', 'checkstyle']
-    let g:syntastic_java_checkstyle_classpath="~/bin/checkstyle-java/checkstyle-7.6.1-tubs.jar"
-    let g:syntastic_java_checkstyle_conf_file="~/bin/checkstyle-java/tubs_checks.xml"
+    " let g:syntastic_java_checkstyle_classpath="$HOME/bin/checkstyle-java/checkstyle-7.6.1-tubs.jar"
+    let g:syntastic_java_checkstyle_conf_file="$HOME/bin/checkstyle-java/tubs_checks.xml"
     autocmd FileType java call SetJavaKeymap()
     function! SetJavaKeymap()
         nnoremap <F1> :!jcheck %<CR>
@@ -162,6 +153,7 @@ augroup ft_java
     endfunction
 augroup END
 
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
 augroup ft_arduino
     autocmd!
     autocmd BufNewFile,BufRead *.ino call SetArduinoKeymap()

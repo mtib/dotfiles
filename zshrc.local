@@ -53,6 +53,10 @@ function ytdm {
     youtube-dl -x --audio-format mp3 -o '%(title)s.%(ext)s' "$1"
 }
 
+function reload {
+    source $HOME/.zshrc.local
+}
+
 function yhs {
     # set in .keys
     ssh $HSLOGIN -NCL localhost:7009:localhost:7009
