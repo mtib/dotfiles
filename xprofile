@@ -19,6 +19,7 @@ esac
 
 # general settings
 xautolock -time 30 -locker "i3lock-fancy -p -t ''" &
+xset b off
 
 (
     loger=".xlog";

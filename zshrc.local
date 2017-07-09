@@ -12,7 +12,7 @@ fi
 # env variables
 export GOPATH="$HOME/go"
 export GITHUB="$HOME/github"
-export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$HOME/.local/bin:$HOME/.cargo/bin"
+export PATH="$PATH:$GOPATH/bin:$HOME/bin:$HOME/.gem/ruby/2.4.0/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 export EDITOR="/usr/bin/vim" # default to vim
 # export TERM="xterm-256color" # enable 256 colors
 export VISUAL="/usr/bin/vim" # unsure if working..
@@ -22,7 +22,6 @@ alias diff="git diff"
 alias du="du -h"
 alias l="ls -lh"
 alias la="ls -Alh"
-alias lc="colorls"
 alias svim="vim -u ~/.svimrc" # minimal version of vim
 alias vmi="vim" # default to vim
 alias vopen="vim \$(fzf)"
@@ -47,6 +46,11 @@ function singalong {
 
 function rec {
     asciinema rec $1 -w 0.2
+}
+
+function lc {
+    colorls $@
+    echo "";
 }
 
 function ytdm {
