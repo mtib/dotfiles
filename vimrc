@@ -45,6 +45,7 @@ Plugin 'eagletmt/neco-ghc'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'alx741/ghc.vim'
+" Plugin 'pangloss/vim-javascript'
 
 " tpope
 Plugin 'tpope/vim-commentary'
@@ -245,3 +246,4 @@ iabbrev @@ markus@tibyte.net
 iabbrev taht that
 iabbrev widht width
 iabbrev heigth height
+iabbrev sysout System.out.print
