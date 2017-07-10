@@ -100,7 +100,8 @@ set relativenumber
 set laststatus=2
 " set notermguicolors
 " colorscheme PaperColor
-colorscheme revolutions
+" colorscheme revolutions
+colorscheme deepsea
 
 set wildignore+=*.so,*.o,*.swp,*.zip,*.class,.node*
 " let g:ctrlp_user_command = 'find %s -type f'

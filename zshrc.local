@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 # ZSHRC.LOCAL
 # author: Markus <mtib> Becker
-# mail: markus@tibyte.net
+# mail: mtb@tibyte.net
 #
 
 # source local keys
@@ -29,6 +29,7 @@ alias fzf="fzf-tmux"
 alias gut="git" # correct me being a gut
 alias :q="exit" # because vim is muscle memory
 alias rmtmp="rm *~"
+alias cmus="cmus --listen 0.0.0.0"
 alias yaourt="yaourt --color"
 alias yinstall="yaourt --color --noconfirm -S"
 alias say="espeak -v german"
