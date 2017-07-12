@@ -1,10 +1,10 @@
 ! xrdb -merge ~/.Xresources
-*faceName: mononoki Nerd Font
+*faceName: Hurmit Nerd Font
 *letterSpacing: -6
 /* *antialias: false */
 *selectToClipboard: true
-*faceSize: 10
-*boldFont: xft:mononoki Nerd Font:style=Bold
+*faceSize: 8
+*boldFont: xft:Hurmit Nerd Font:style=Bold:antialias=false
 *loginshell: true
 *savelines: 16384
 
