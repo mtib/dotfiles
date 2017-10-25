@@ -68,18 +68,20 @@ set $rurf #FFFFFF
 set $rurb #DC322F
 
 ## KEYBINDS
-bindsym $mod+Return exec xterm -e zsh
+bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
-bindsym $mod+d exec --no-startup-id "rofi -show run -font 'Hurmit Nerd Font 32px' -terminal xterm -fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
+bindsym $mod+d exec --no-startup-id "rofi -show run -font 'mononoki Nerd Font 32px' -terminal xterm -matching fuzzy -fullscreen -padding 200 -color-window '$rb, $rb, $rb' -color-normal '$rhlb, $rhlf, $rhlalt, $rhlselb, $rhlself' -color-active '$racb, $racf, $racb, $rhlf, $rhlb' -color-urgent '$rurb, $rurf, $rurb, $rhlb, $rhlf'"
 # main: bg txt bg
 # curr: bg txt
 # wind: inner outer dots
 bindsym $mod+b exec "blueman-applet; sleep 5; blueman-manager"
 bindsym $mod+m exec xterm -e "$HOME/bin/ranger.sh"
 bindsym $mod+u exec xterm -e tmux
+bindsym $mod+z exec xfce4-terminal --drop-down
 bindsym $mod+Shift+f fullscreen global
 bindsym $mod+g exec gcolor2
 bindsym $mod+t exec thunar
+bindsym $mod+Shift+b exec "$HOME/bluezfix.sh"
 bindsym $mod+p exec pavucontrol
 bindsym $mod+x exec gnome-screenshot -i
 bindcode 107 exec "zsh $HOME/.scrot.sh"
@@ -150,7 +152,7 @@ set $ws10 "0"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox
+bindsym $mod+2 workspace $ws2; exec [ $(ps h -C firefox-nightly | wc -l) = 0 ] && /usr/bin/firefox-nightly
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
@@ -188,8 +190,8 @@ for_window [class="gnome-screenshot"] sticky enable
 
 ## I3 GAPS gaps
 for_window [class="^.*"] border pixel 2
-gaps inner 6
-gaps outer 2
+#gaps inner 6
+#gaps outer 2
 
 ## TESTING
 # reload the configuration file

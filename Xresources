@@ -1,10 +1,10 @@
 ! xrdb -merge ~/.Xresources
-*faceName: Hurmit Nerd Font
-*letterSpacing: -6
+*faceName: FantasqueSansMono Nerd Font Mono
+*letterSpacing: 0
 /* *antialias: false */
 *selectToClipboard: true
-*faceSize: 8
-*boldFont: xft:Hurmit Nerd Font:style=Bold:antialias=false
+*faceSize: 10
+*boldFont: xft:FantasqueSansMono Nerd Font Mono:style=Bold:antialias=false
 *loginshell: true
 *savelines: 16384
 

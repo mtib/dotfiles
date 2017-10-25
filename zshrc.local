@@ -22,6 +22,7 @@ alias diff="git diff"
 alias du="du -h"
 alias l="ls -lh"
 alias la="ls -Alh"
+alias lx="exa -l --git"
 alias svim="vim -u ~/.svimrc" # minimal version of vim
 alias vmi="vim" # default to vim
 alias vopen="vim \$(fzf)"
@@ -86,6 +87,7 @@ function jcheck {
 # vim shortcuts
 alias vzs="vim $HOME/.zshrc.local"
 alias vi3="vim $GITHUB/dotfiles/i3/i3"
+alias vrc="vim $HOME/.vimrc"
 
 export VIMBG="github" # default vim colorscheme
 
@@ -323,6 +325,8 @@ function note {
             echo -e "\033[0;37m\"$@\" \033[1;30madded to your notes.\033[0m\n";;
     esac
 }
+
+eval $(thefuck --alias)
 
 # zsh syntax highlighting
 zshsynt="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
